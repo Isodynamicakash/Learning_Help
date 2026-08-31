@@ -53,6 +53,7 @@ export default function Dashboard() {
   const [refreshing, setRefreshing] = useState(false);
   const [busy, setBusy] = useState(null); // { title, sub }
   const [celebration, setCelebration] = useState(null); // { title, sub }
+  const [viewMode, setViewMode] = useState("order"); // "order" | "type"
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -179,11 +180,17 @@ export default function Dashboard() {
 
   function renderStepCard(s) {
     return (
-      <div className={`card step-card type-${s.item_type || "course"}`} key={s.course_id}>
+      <div
+        className={`card step-card type-${s.item_type || "course"} ${s.status === "completed" ? "is-done" : ""}`}
+        key={s.course_id}
+      >
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span className="step-order-badge">{s.order}</span>
-            <strong style={{ fontSize: 14.5 }}>{s.title}</strong>
+            <div>
+              <span className="type-chip">{TYPE_SECTION_LABEL[s.item_type] || "Course"}</span>
+              <strong style={{ fontSize: 14.5, display: "block", marginTop: 2 }}>{s.title}</strong>
+            </div>
           </div>
           <span className={`pill pill-${s.status || "not_started"}`}>{STATUS_LABEL[s.status] || s.status}</span>
         </div>
@@ -349,17 +356,40 @@ export default function Dashboard() {
               </div>
             )}
 
-            {TYPE_ORDER.filter((t) => grouped[t]?.length).map((t) => (
-              <div key={t}>
-                <div className="section-heading">
-                  {TYPE_SECTION_LABEL[t]}
-                  <span className="count">{grouped[t].length}</span>
-                </div>
-                <div className="steps-grid">
-                  {grouped[t].map(renderStepCard)}
-                </div>
+            {progress.items.length > 0 && (
+              <div className="view-toggle">
+                <button
+                  className={viewMode === "order" ? "active" : ""}
+                  onClick={() => setViewMode("order")}
+                >
+                  In order
+                </button>
+                <button
+                  className={viewMode === "type" ? "active" : ""}
+                  onClick={() => setViewMode("type")}
+                >
+                  By type
+                </button>
               </div>
-            ))}
+            )}
+
+            {viewMode === "order" ? (
+              <div className="steps-grid">
+                {progress.items.map(renderStepCard)}
+              </div>
+            ) : (
+              TYPE_ORDER.filter((t) => grouped[t]?.length).map((t) => (
+                <div key={t}>
+                  <div className="section-heading">
+                    {TYPE_SECTION_LABEL[t]}
+                    <span className="count">{grouped[t].length}</span>
+                  </div>
+                  <div className="steps-grid">
+                    {grouped[t].map(renderStepCard)}
+                  </div>
+                </div>
+              ))
+            )}
           </div>
 
           {/* ---------- Right sidebar ---------- */}
@@ -446,4 +476,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-              }
+            }
