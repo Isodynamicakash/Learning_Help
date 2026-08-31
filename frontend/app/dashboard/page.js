@@ -8,6 +8,35 @@ import Navbar from "../../components/Navbar";
 const TYPE_ORDER = ["course", "project", "resource"];
 const TYPE_SECTION_LABEL = { course: "Courses", project: "Projects", resource: "Resources" };
 const STATUS_LABEL = { not_started: "Not started", in_progress: "In progress", completed: "Completed" };
+const CONFETTI_COLORS = ["#5b7fdb", "#3fb27f", "#c98a2c", "#d4574f", "#8b93a1"];
+
+function Confetti() {
+  const pieces = Array.from({ length: 70 }, (_, i) => ({
+    id: i,
+    left: Math.random() * 100,
+    delay: Math.random() * 0.5,
+    duration: 1.8 + Math.random() * 1.2,
+    color: CONFETTI_COLORS[i % CONFETTI_COLORS.length],
+    round: Math.random() > 0.65,
+  }));
+  return (
+    <div className="confetti-layer">
+      {pieces.map((p) => (
+        <span
+          key={p.id}
+          className="confetti-piece"
+          style={{
+            left: `${p.left}%`,
+            background: p.color,
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+            borderRadius: p.round ? "50%" : "2px",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Dashboard() {
   const router = useRouter();
@@ -16,12 +45,14 @@ export default function Dashboard() {
   const [name, setName] = useState("");
   const [pathId, setPathId] = useState(null);
   const [profile, setProfile] = useState(null);
-  const [progress, setProgress] = useState({ items: [], total: 0, completed: 0, skill_gaps: [] });
+  const [progress, setProgress] = useState({ items: [], total: 0, completed: 0, skill_gaps: [], streak: 0 });
   const [skills, setSkills] = useState({ skills: [], completed_count: 0 });
   const [explanations, setExplanations] = useState({});
   const [loading, setLoading] = useState(false);
   const [adapting, setAdapting] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
+  const [busy, setBusy] = useState(null); // { title, sub }
+  const [celebration, setCelebration] = useState(null); // { title, sub }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -34,6 +65,12 @@ export default function Dashboard() {
       }
     });
   }, [router]);
+
+  useEffect(() => {
+    if (!celebration) return;
+    const t = setTimeout(() => setCelebration(null), 4200);
+    return () => clearTimeout(t);
+  }, [celebration]);
 
   async function refreshAll(uid) {
     setRefreshing(true);
@@ -55,12 +92,14 @@ export default function Dashboard() {
 
   async function generate() {
     setLoading(true);
+    setBusy({ title: "Building your path", sub: "Matching courses to your goal and skill level" });
     try {
       await api.generatePath(userId);
       await refreshAll(userId);
     } catch (e) {
       alert(`Couldn't generate a path: ${e.message}`);
     }
+    setBusy(null);
     setLoading(false);
   }
 
@@ -73,10 +112,22 @@ export default function Dashboard() {
     }
   }
 
-  async function markDone(course_id) {
+  async function markDone(course_id, title) {
     try {
       await api.updateProgress(userId, course_id, "completed");
+      const before = progress.completed;
+      const total = progress.total;
       await refreshAll(userId);
+      const remaining = Math.max(0, total - (before + 1));
+      const goalText = profile?.goal ? `your ${profile.goal} goal` : "your goal";
+      setCelebration(
+        remaining === 0
+          ? { title: "Path complete!", sub: `You finished every step toward ${goalText}.` }
+          : {
+              title: "Hurray — step complete!",
+              sub: `${title} done. ${remaining} step${remaining === 1 ? "" : "s"} left to ${goalText}.`,
+            }
+      );
     } catch (e) {
       alert(`Couldn't update progress: ${e.message}`);
     }
@@ -85,6 +136,12 @@ export default function Dashboard() {
   async function giveFeedback(course_id, feedback) {
     if (!pathId) return alert("No active path to adapt.");
     setAdapting(course_id);
+    setBusy({
+      title: "Adapting your path",
+      sub: feedback === "struggled"
+        ? "Adding foundations before you continue"
+        : "Skipping ahead to something more challenging",
+    });
     try {
       await api.updateProgress(userId, course_id, "in_progress", feedback);
       await api.adaptPath(userId, pathId, course_id, feedback);
@@ -92,13 +149,12 @@ export default function Dashboard() {
     } catch (e) {
       alert(`Couldn't adapt the path: ${e.message}`);
     }
+    setBusy(null);
     setAdapting(null);
   }
 
   const pct = progress.total ? Math.round((progress.completed / progress.total) * 100) : 0;
   const initial = (name || email || "?").charAt(0).toUpperCase();
-
-  // First not-yet-completed step in the current path — the "next action".
   const nextUp = progress.items.find((i) => i.status !== "completed") || null;
 
   const grouped = {};
@@ -128,13 +184,13 @@ export default function Dashboard() {
           <button className="btn-secondary btn-sm" onClick={() => explainStep(s.course_id)}>Why this?</button>
           {s.status !== "completed" && (
             <>
-              <button className="btn-secondary btn-sm" onClick={() => markDone(s.course_id)}>Mark complete</button>
+              <button className="btn-secondary btn-sm" onClick={() => markDone(s.course_id, s.title)}>Mark complete</button>
               <button
                 className="btn-ghost btn-sm"
                 disabled={adapting === s.course_id}
                 onClick={() => giveFeedback(s.course_id, "struggled")}
               >
-                {adapting === s.course_id ? "Adapting..." : "Struggled"}
+                Struggled
               </button>
               <button
                 className="btn-ghost btn-sm"
@@ -152,6 +208,27 @@ export default function Dashboard() {
 
   return (
     <>
+      {busy && (
+        <div className="busy-overlay">
+          <div className="busy-card">
+            <div className="spinner" />
+            <p className="busy-title">{busy.title}</p>
+            <p className="busy-sub">{busy.sub}</p>
+            <div className="busy-dots"><span /><span /><span /></div>
+          </div>
+        </div>
+      )}
+
+      {celebration && (
+        <>
+          <Confetti />
+          <div className="celebrate-toast">
+            <p className="celebrate-title">{celebration.title}</p>
+            <p className="celebrate-sub">{celebration.sub}</p>
+          </div>
+        </>
+      )}
+
       <Navbar email={email} name={name} />
       <div className="dash-wrap">
         <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
@@ -173,8 +250,7 @@ export default function Dashboard() {
                     {name && <p className="card-sub" style={{ marginBottom: 6 }}>{email}</p>}
                   </div>
                 </div>
-                {profile.goal && <p style={{ margin: "10px 0 0", fontSize: 13.5 }}><strong>Goal:</strong> {profile.goal}</p>}
-                <div style={{ marginTop: 8 }}>
+                <div style={{ marginTop: 10 }}>
                   {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
                   {(profile.interests || []).map((i) => <span className="tag" key={i}>{i}</span>)}
                   {(profile.known_topics || []).map((k) => <span className="tag" key={k}>{k}</span>)}
@@ -197,15 +273,35 @@ export default function Dashboard() {
               </div>
             )}
 
-            <div className="card">
-              <div className="card-header">
-                <p className="card-title" style={{ margin: 0 }}>Progress</p>
-                <span style={{ fontSize: 12.5, color: "var(--text-dim)" }}>{progress.completed}/{progress.total}</span>
+            {/* ---- Goal card ---- */}
+            {profile?.goal && (
+              <div className="card goal-card">
+                <p className="card-sub" style={{ margin: 0 }}>Your goal</p>
+                <p className="goal-title">{profile.goal}</p>
+                <div className="progress-bar">
+                  <div className="progress-fill" style={{ width: `${pct}%` }} />
+                </div>
+                <div className="goal-meta">
+                  <span>{progress.completed} of {progress.total} steps</span>
+                  <span>{pct}%</span>
+                </div>
               </div>
-              <div className="progress-bar" style={{ marginTop: 10 }}>
-                <div className="progress-fill" style={{ width: `${pct}%` }} />
+            )}
+
+            {/* ---- Streak card ---- */}
+            <div className="card streak-card">
+              <div className="streak-flame">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2s4 4.5 4 8a4 4 0 0 1-8 0c0-1 .5-2 .5-2S6 10 6 14a6 6 0 0 0 12 0c0-5-6-12-6-12z" />
+                </svg>
               </div>
-              <p style={{ fontSize: 11.5, color: "var(--text-dim)", marginTop: 6, marginBottom: 0 }}>{pct}% of current path</p>
+              <div>
+                <p className="streak-num">{progress.streak || 0}</p>
+                <p className="streak-label">
+                  {progress.streak === 1 ? "day streak" : "day streak"}
+                  {!progress.streak && " — complete a step today"}
+                </p>
+              </div>
             </div>
 
             {nextUp && (
