@@ -128,10 +128,7 @@ export default function Login() {
             </button>
           </form>
         </div>
-        <p style={{ opacity: 0.5, fontSize: 12, textAlign: "center", marginTop: 14 }}>
-          Requires Email auth enabled in your Supabase project.
-        </p>
       </div>
     </div>
   );
-                     }
+                }
