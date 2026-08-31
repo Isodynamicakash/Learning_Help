@@ -55,35 +55,4 @@ your goal, then go to Dashboard → Generate my learning path.
 - **service_role key stays server-side only.** The frontend only ever gets
   the `anon` key; all writes to learner data go through the FastAPI backend.
 
-## Round 2 additions (skill gaps, projects/resources, skill dashboard, adaptation)
-- **Projects & resources**: `build_catalog.py` now generates one companion
-  project and one resource per course (item_type: course/project/resource).
-  Path generation pulls from all three, not just courses.
-- **Skill gaps**: every `/path/generate` and `/path/adapt` call also returns
-  `skill_gaps` — topics the goal needs that aren't in `known_topics` — shown
-  on the dashboard.
-- **Skill development view**: `GET /progress/{user_id}/skills` aggregates
-  catalog tags from completed steps into a simple strength-by-tag list,
-  rendered as bars on the dashboard. It's evidence-of-coverage, not a real
-  competency test.
-- **Adaptive path**: dashboard has "Struggled — adjust path" / "Too easy —
-  skip ahead" buttons per step, calling `/path/adapt`, which re-plans only
-  the remaining (not-completed) steps around the feedback and the learner's
-  updated known_topics.
-- If you ran `supabase_schema.sql` before this update, re-run it — the new
-  version adds the missing columns with `ADD COLUMN IF NOT EXISTS`, safe to
-  re-run without losing data. Also re-run `python scripts/build_catalog.py`
-  to regenerate the catalog with project/resource entries (this makes more
-  OpenAI calls than before — chunked 20 courses at a time, ~4 calls total).
 
-## Not yet wired up (needs your input)
-- RLS policies in `supabase_schema.sql` are permissive placeholders (backend
-  uses the service key, which bypasses RLS anyway). Tighten before any real
-  deployment.
-- No rate limiting / auth check on the FastAPI routes themselves — anyone
-  who can reach the backend URL can call them. Fine for a local demo, not
-  for a public deploy.
-- Deployment (Vercel for frontend, Render/Railway for backend) isn't set up
-  — say the word and I'll add configs for whichever you pick.
-- Skill gap / skill development are heuristic, not psychometric — fine for
-  a demo, don't oversell it as an assessment engine if judges probe it.
