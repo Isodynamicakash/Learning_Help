@@ -1,21 +1,52 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabaseClient";
 
 export default function Login() {
+  const router = useRouter();
+  const [mode, setMode] = useState("signin"); // "signin" | "signup"
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [sent, setSent] = useState(false);
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
 
-  async function sendLink(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     setLoading(true);
     setError("");
-    const { error } = await supabase.auth.signInWithOtp({ email });
+    setNotice("");
+
+    if (mode === "signup") {
+      const { data, error } = await supabase.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name } },
+      });
+      setLoading(false);
+      if (error) {
+        setError(error.message);
+        return;
+      }
+      if (data.session) {
+        router.replace("/chat");
+      } else {
+        setNotice("Account created. Check your email once to confirm, then sign in below.");
+        setMode("signin");
+      }
+      return;
+    }
+
+    // signin
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
-    if (!error) setSent(true);
-    else setError(error.message);
+    if (error) {
+      setError(error.message);
+      return;
+    }
+    router.replace("/chat");
   }
 
   return (
@@ -40,41 +71,62 @@ export default function Login() {
         </div>
 
         <div className="card">
-          {sent ? (
-            <div style={{ textAlign: "center", padding: "6px 0" }}>
-              <div style={{
-                width: 40, height: 40, borderRadius: "50%", background: "var(--accent-soft)",
-                display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 12px",
-              }}>
-                <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="3" y="5" width="18" height="14" rx="2" />
-                  <path d="m3 7 9 6 9-6" />
-                </svg>
-              </div>
-              <p style={{ margin: 0, fontWeight: 600, fontSize: 14.5 }}>Check your email</p>
-              <p style={{ color: "var(--text-dim)", fontSize: 13, marginTop: 6, lineHeight: 1.5 }}>
-                We sent a sign-in link to<br /><strong style={{ color: "var(--text)" }}>{email}</strong>
-              </p>
-            </div>
-          ) : (
-            <form onSubmit={sendLink}>
-              <p style={{ margin: "0 0 14px", fontSize: 13.5, color: "var(--text-dim)" }}>
-                Sign in with your email to get started.
-              </p>
-              <input
-                type="email"
-                placeholder="you@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                style={{ marginBottom: 12 }}
-              />
-              {error && <p style={{ color: "var(--danger)", fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
-              <button className="btn-primary btn-block" disabled={loading}>
-                {loading ? "Sending..." : "Send sign-in link"}
-              </button>
-            </form>
+          <div style={{ display: "flex", gap: 4, marginBottom: 16, background: "var(--surface-2)", padding: 4, borderRadius: 8 }}>
+            <button
+              type="button"
+              className={mode === "signin" ? "btn-primary" : "btn-ghost"}
+              style={{ flex: 1, border: "none" }}
+              onClick={() => { setMode("signin"); setError(""); setNotice(""); }}
+            >
+              Sign in
+            </button>
+            <button
+              type="button"
+              className={mode === "signup" ? "btn-primary" : "btn-ghost"}
+              style={{ flex: 1, border: "none" }}
+              onClick={() => { setMode("signup"); setError(""); setNotice(""); }}
+            >
+              Create account
+            </button>
+          </div>
+
+          {notice && (
+            <p style={{ color: "var(--success)", fontSize: 13, marginBottom: 12 }}>{notice}</p>
           )}
+
+          <form onSubmit={handleSubmit}>
+            {mode === "signup" && (
+              <input
+                type="text"
+                placeholder="Full name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                style={{ marginBottom: 10 }}
+              />
+            )}
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              style={{ marginBottom: 10 }}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              minLength={6}
+              style={{ marginBottom: 12 }}
+            />
+            {error && <p style={{ color: "var(--danger)", fontSize: 12.5, marginBottom: 10 }}>{error}</p>}
+            <button className="btn-primary btn-block" disabled={loading}>
+              {loading ? "Please wait..." : mode === "signup" ? "Create account" : "Sign in"}
+            </button>
+          </form>
         </div>
         <p style={{ opacity: 0.5, fontSize: 12, textAlign: "center", marginTop: 14 }}>
           Requires Email auth enabled in your Supabase project.
@@ -82,4 +134,4 @@ export default function Login() {
       </div>
     </div>
   );
-}
+                     }
