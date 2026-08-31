@@ -1,0 +1,3706 @@
+{
+  "AWS Cloud Practitioner": {
+    "course_id": "aws-cloud-practitioner",
+    "title": "AWS Cloud Practitioner",
+    "item_type": "course",
+    "description": "This course provides an overview of AWS cloud services and foundational cloud concepts. Learners will gain the knowledge needed to understand AWS services and their benefits.",
+    "level": "Beginner",
+    "tags": [
+      "AWS",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": []
+  },
+  "Project: AWS Service Overview Presentation": {
+    "course_id": "aws-cloud-practitioner-project",
+    "title": "Project: AWS Service Overview Presentation",
+    "item_type": "project",
+    "description": "Create a presentation that outlines key AWS services and their use cases.",
+    "level": "Beginner",
+    "tags": [
+      "AWS",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 5,
+    "prerequisites": [
+      "AWS Cloud Practitioner"
+    ]
+  },
+  "Resource: AWS Cloud Practitioner Study Guide": {
+    "course_id": "aws-cloud-practitioner-resource",
+    "title": "Resource: AWS Cloud Practitioner Study Guide",
+    "item_type": "resource",
+    "description": "A comprehensive guide that covers all topics necessary for the AWS Cloud Practitioner exam.",
+    "level": "Beginner",
+    "tags": [
+      "AWS",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "AWS Solutions Architect": {
+    "course_id": "aws-solutions-architect",
+    "title": "AWS Solutions Architect",
+    "item_type": "course",
+    "description": "This course teaches how to design and deploy scalable systems on AWS. It covers architectural best practices and the AWS Well-Architected Framework.",
+    "level": "Intermediate",
+    "tags": [
+      "AWS",
+      "Architecture",
+      "Cloud"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "AWS Cloud Practitioner"
+    ]
+  },
+  "Project: Design a Scalable Architecture": {
+    "course_id": "aws-solutions-architect-project",
+    "title": "Project: Design a Scalable Architecture",
+    "item_type": "project",
+    "description": "Design a scalable architecture for a web application using AWS services.",
+    "level": "Intermediate",
+    "tags": [
+      "AWS",
+      "Architecture",
+      "Cloud"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "AWS Solutions Architect"
+    ]
+  },
+  "Resource: AWS Solutions Architect Exam Readiness": {
+    "course_id": "aws-solutions-architect-resource",
+    "title": "Resource: AWS Solutions Architect Exam Readiness",
+    "item_type": "resource",
+    "description": "A resource that provides sample questions and exam strategies for the AWS Solutions Architect certification.",
+    "level": "Intermediate",
+    "tags": [
+      "AWS",
+      "Architecture",
+      "Cloud"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Advanced Java and Spring Boot": {
+    "course_id": "advanced-java-and-spring-boot",
+    "title": "Advanced Java and Spring Boot",
+    "item_type": "course",
+    "description": "This course dives deep into advanced Java programming concepts and the Spring Boot framework for building enterprise applications. Learners will enhance their coding skills and application design.",
+    "level": "Advanced",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "Development"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "C Plus Plus Programming Essentials"
+    ]
+  },
+  "Project: Build a RESTful API with Spring Boot": {
+    "course_id": "advanced-java-and-spring-boot-project",
+    "title": "Project: Build a RESTful API with Spring Boot",
+    "item_type": "project",
+    "description": "Develop a RESTful API using Spring Boot that connects to a database.",
+    "level": "Advanced",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "Development"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Advanced Java and Spring Boot"
+    ]
+  },
+  "Resource: Spring Boot Reference Documentation": {
+    "course_id": "advanced-java-and-spring-boot-resource",
+    "title": "Resource: Spring Boot Reference Documentation",
+    "item_type": "resource",
+    "description": "An official documentation resource that provides in-depth information on Spring Boot features and configurations.",
+    "level": "Advanced",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Advanced Neural Networks": {
+    "course_id": "advanced-neural-networks",
+    "title": "Advanced Neural Networks",
+    "item_type": "course",
+    "description": "This course covers advanced concepts in neural networks, including deep learning architectures and optimization techniques. Learners will apply these concepts to real-world problems.",
+    "level": "Advanced",
+    "tags": [
+      "Neural Networks",
+      "Deep Learning",
+      "AI"
+    ],
+    "estimated_hours": 35,
+    "prerequisites": []
+  },
+  "Project: Image Classification with Neural Networks": {
+    "course_id": "advanced-neural-networks-project",
+    "title": "Project: Image Classification with Neural Networks",
+    "item_type": "project",
+    "description": "Create a neural network model to classify images using a dataset of your choice.",
+    "level": "Advanced",
+    "tags": [
+      "Neural Networks",
+      "Deep Learning",
+      "AI"
+    ],
+    "estimated_hours": 17,
+    "prerequisites": [
+      "Advanced Neural Networks"
+    ]
+  },
+  "Resource: Deep Learning Cheat Sheet": {
+    "course_id": "advanced-neural-networks-resource",
+    "title": "Resource: Deep Learning Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference guide that summarizes key concepts and techniques in deep learning.",
+    "level": "Advanced",
+    "tags": [
+      "Neural Networks",
+      "Deep Learning",
+      "AI"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Advanced Python Development": {
+    "course_id": "advanced-python-development",
+    "title": "Advanced Python Development",
+    "item_type": "course",
+    "description": "This course focuses on advanced Python programming techniques, including decorators, context managers, and asynchronous programming. Learners will enhance their Python skills for complex applications.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Development",
+      "Advanced"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": []
+  },
+  "Project: Build a Web Scraper": {
+    "course_id": "advanced-python-development-project",
+    "title": "Project: Build a Web Scraper",
+    "item_type": "project",
+    "description": "Develop a web scraper using advanced Python techniques to extract data from websites.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Development",
+      "Advanced"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Advanced Python Development"
+    ]
+  },
+  "Resource: Python Advanced Topics Reference": {
+    "course_id": "advanced-python-development-resource",
+    "title": "Resource: Python Advanced Topics Reference",
+    "item_type": "resource",
+    "description": "A reference document that covers advanced Python topics and best practices.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Development",
+      "Advanced"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Advanced SQL and Query Optimization": {
+    "course_id": "advanced-sql-and-query-optimization",
+    "title": "Advanced SQL and Query Optimization",
+    "item_type": "course",
+    "description": "This course teaches advanced SQL techniques and strategies for optimizing database queries. Learners will improve their ability to write efficient SQL code.",
+    "level": "Advanced",
+    "tags": [
+      "SQL",
+      "Database",
+      "Optimization"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Optimize a Database Query": {
+    "course_id": "advanced-sql-and-query-optimization-project",
+    "title": "Project: Optimize a Database Query",
+    "item_type": "project",
+    "description": "Analyze and optimize a complex SQL query for better performance.",
+    "level": "Advanced",
+    "tags": [
+      "SQL",
+      "Database",
+      "Optimization"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Advanced SQL and Query Optimization"
+    ]
+  },
+  "Resource: SQL Performance Tuning Guide": {
+    "course_id": "advanced-sql-and-query-optimization-resource",
+    "title": "Resource: SQL Performance Tuning Guide",
+    "item_type": "resource",
+    "description": "A guide that provides tips and techniques for optimizing SQL queries and database performance.",
+    "level": "Advanced",
+    "tags": [
+      "SQL",
+      "Database",
+      "Optimization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Android App Development": {
+    "course_id": "android-app-development",
+    "title": "Android App Development",
+    "item_type": "course",
+    "description": "This course introduces learners to building Android applications using Java and Kotlin. It covers the fundamentals of Android development and app design.",
+    "level": "Intermediate",
+    "tags": [
+      "Android",
+      "App Development",
+      "Java"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "C Plus Plus Programming Essentials"
+    ]
+  },
+  "Project: Create a Simple Android App": {
+    "course_id": "android-app-development-project",
+    "title": "Project: Create a Simple Android App",
+    "item_type": "project",
+    "description": "Develop a basic Android app that includes user input and displays output.",
+    "level": "Intermediate",
+    "tags": [
+      "Android",
+      "App Development",
+      "Java"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Android App Development"
+    ]
+  },
+  "Resource: Android Development Documentation": {
+    "course_id": "android-app-development-resource",
+    "title": "Resource: Android Development Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides guidelines and resources for Android app development.",
+    "level": "Intermediate",
+    "tags": [
+      "Android",
+      "App Development",
+      "Java"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Angular Framework Essentials": {
+    "course_id": "angular-framework-essentials",
+    "title": "Angular Framework Essentials",
+    "item_type": "course",
+    "description": "This course covers the essential concepts of the Angular framework for building dynamic web applications. Learners will gain hands-on experience with Angular components and services.",
+    "level": "Intermediate",
+    "tags": [
+      "Angular",
+      "Web Development",
+      "JavaScript"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Build a Simple Angular Application": {
+    "course_id": "angular-framework-essentials-project",
+    "title": "Project: Build a Simple Angular Application",
+    "item_type": "project",
+    "description": "Create a basic Angular application that demonstrates component interaction.",
+    "level": "Intermediate",
+    "tags": [
+      "Angular",
+      "Web Development",
+      "JavaScript"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Angular Framework Essentials"
+    ]
+  },
+  "Resource: Angular Cheat Sheet": {
+    "course_id": "angular-framework-essentials-resource",
+    "title": "Resource: Angular Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference guide that summarizes key Angular concepts and syntax.",
+    "level": "Intermediate",
+    "tags": [
+      "Angular",
+      "Web Development",
+      "JavaScript"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Apache Kafka for Real-time Data": {
+    "course_id": "apache-kafka-for-real-time-data",
+    "title": "Apache Kafka for Real-time Data",
+    "item_type": "course",
+    "description": "This course teaches how to use Apache Kafka for building real-time data pipelines and streaming applications. Learners will understand Kafka's architecture and use cases.",
+    "level": "Intermediate",
+    "tags": [
+      "Kafka",
+      "Data Streaming",
+      "Real-time"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Create a Real-time Data Pipeline": {
+    "course_id": "apache-kafka-for-real-time-data-project",
+    "title": "Project: Create a Real-time Data Pipeline",
+    "item_type": "project",
+    "description": "Build a data pipeline using Apache Kafka to process streaming data.",
+    "level": "Intermediate",
+    "tags": [
+      "Kafka",
+      "Data Streaming",
+      "Real-time"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Apache Kafka for Real-time Data"
+    ]
+  },
+  "Resource: Kafka Documentation": {
+    "course_id": "apache-kafka-for-real-time-data-resource",
+    "title": "Resource: Kafka Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides detailed information on Apache Kafka features and configurations.",
+    "level": "Intermediate",
+    "tags": [
+      "Kafka",
+      "Data Streaming",
+      "Real-time"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Azure Fundamentals": {
+    "course_id": "azure-fundamentals",
+    "title": "Azure Fundamentals",
+    "item_type": "course",
+    "description": "This course provides an introduction to Microsoft Azure cloud services and solutions. Learners will understand the core concepts and services offered by Azure.",
+    "level": "Beginner",
+    "tags": [
+      "Azure",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": []
+  },
+  "Project: Azure Service Overview Document": {
+    "course_id": "azure-fundamentals-project",
+    "title": "Project: Azure Service Overview Document",
+    "item_type": "project",
+    "description": "Create a document that outlines key Azure services and their benefits.",
+    "level": "Beginner",
+    "tags": [
+      "Azure",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 5,
+    "prerequisites": [
+      "Azure Fundamentals"
+    ]
+  },
+  "Resource: Azure Fundamentals Study Guide": {
+    "course_id": "azure-fundamentals-resource",
+    "title": "Resource: Azure Fundamentals Study Guide",
+    "item_type": "resource",
+    "description": "A study guide that covers all topics necessary for the Azure Fundamentals certification.",
+    "level": "Beginner",
+    "tags": [
+      "Azure",
+      "Cloud",
+      "Fundamentals"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Bayesian Statistics": {
+    "course_id": "bayesian-statistics",
+    "title": "Bayesian Statistics",
+    "item_type": "course",
+    "description": "This course introduces the principles of Bayesian statistics and its applications in data analysis. Learners will understand Bayesian inference and modeling.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Bayesian",
+      "Data Analysis"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Bayesian Inference Project": {
+    "course_id": "bayesian-statistics-project",
+    "title": "Project: Bayesian Inference Project",
+    "item_type": "project",
+    "description": "Apply Bayesian inference to a dataset and interpret the results.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Bayesian",
+      "Data Analysis"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Bayesian Statistics"
+    ]
+  },
+  "Resource: Bayesian Statistics Reference": {
+    "course_id": "bayesian-statistics-resource",
+    "title": "Resource: Bayesian Statistics Reference",
+    "item_type": "resource",
+    "description": "A reference document that summarizes key concepts and formulas in Bayesian statistics.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Bayesian",
+      "Data Analysis"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Blockchain Development": {
+    "course_id": "blockchain-development",
+    "title": "Blockchain Development",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of blockchain technology and its applications in various industries. Learners will gain hands-on experience in developing blockchain applications.",
+    "level": "Intermediate",
+    "tags": [
+      "Blockchain",
+      "Development",
+      "Technology"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Build a Simple Blockchain Application": {
+    "course_id": "blockchain-development-project",
+    "title": "Project: Build a Simple Blockchain Application",
+    "item_type": "project",
+    "description": "Develop a basic blockchain application that demonstrates core blockchain concepts.",
+    "level": "Intermediate",
+    "tags": [
+      "Blockchain",
+      "Development",
+      "Technology"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Blockchain Development"
+    ]
+  },
+  "Resource: Blockchain Development Guide": {
+    "course_id": "blockchain-development-resource",
+    "title": "Resource: Blockchain Development Guide",
+    "item_type": "resource",
+    "description": "A guide that provides resources and best practices for blockchain development.",
+    "level": "Intermediate",
+    "tags": [
+      "Blockchain",
+      "Development",
+      "Technology"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "C Plus Plus Programming Essentials": {
+    "course_id": "c-plus-plus-programming-essentials",
+    "title": "C Plus Plus Programming Essentials",
+    "item_type": "course",
+    "description": "This course introduces the fundamentals of C++ programming, including syntax, data structures, and algorithms. Learners will build a solid foundation in C++.",
+    "level": "Beginner",
+    "tags": [
+      "C++",
+      "Programming",
+      "Essentials"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Create a Simple C++ Program": {
+    "course_id": "c-plus-plus-programming-essentials-project",
+    "title": "Project: Create a Simple C++ Program",
+    "item_type": "project",
+    "description": "Write a basic C++ program that demonstrates fundamental programming concepts.",
+    "level": "Beginner",
+    "tags": [
+      "C++",
+      "Programming",
+      "Essentials"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "C Plus Plus Programming Essentials"
+    ]
+  },
+  "Resource: C++ Programming Reference": {
+    "course_id": "c-plus-plus-programming-essentials-resource",
+    "title": "Resource: C++ Programming Reference",
+    "item_type": "resource",
+    "description": "A reference document that covers essential C++ programming concepts and syntax.",
+    "level": "Beginner",
+    "tags": [
+      "C++",
+      "Programming",
+      "Essentials"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "CI CD Pipeline Setup": {
+    "course_id": "ci-cd-pipeline-setup",
+    "title": "CI CD Pipeline Setup",
+    "item_type": "course",
+    "description": "This course teaches how to set up Continuous Integration and Continuous Deployment (CI/CD) pipelines for software projects. Learners will understand best practices for automation.",
+    "level": "Intermediate",
+    "tags": [
+      "CI/CD",
+      "DevOps",
+      "Automation"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Implement a CI/CD Pipeline": {
+    "course_id": "devops-practices-and-tools-project",
+    "title": "Project: Implement a CI/CD Pipeline",
+    "item_type": "project",
+    "description": "Set up a continuous integration and deployment pipeline for a sample application.",
+    "level": "Intermediate",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Automation",
+      "Tools"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "DevOps Practices and Tools"
+    ]
+  },
+  "Resource: CI/CD Best Practices Guide": {
+    "course_id": "ci-cd-pipeline-setup-resource",
+    "title": "Resource: CI/CD Best Practices Guide",
+    "item_type": "resource",
+    "description": "A guide that outlines best practices for implementing CI/CD in software development.",
+    "level": "Intermediate",
+    "tags": [
+      "CI/CD",
+      "DevOps",
+      "Automation"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Calculus for Data Science": {
+    "course_id": "calculus-for-data-science",
+    "title": "Calculus for Data Science",
+    "item_type": "course",
+    "description": "This course covers the basics of calculus and its applications in data science. Learners will understand key concepts such as derivatives and integrals.",
+    "level": "Beginner",
+    "tags": [
+      "Calculus",
+      "Data Science",
+      "Mathematics"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Calculus Application in Data Science": {
+    "course_id": "calculus-for-data-science-project",
+    "title": "Project: Calculus Application in Data Science",
+    "item_type": "project",
+    "description": "Apply calculus concepts to solve a data science problem.",
+    "level": "Beginner",
+    "tags": [
+      "Calculus",
+      "Data Science",
+      "Mathematics"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Calculus for Data Science"
+    ]
+  },
+  "Resource: Calculus Reference Sheet": {
+    "course_id": "calculus-for-data-science-resource",
+    "title": "Resource: Calculus Reference Sheet",
+    "item_type": "resource",
+    "description": "A reference sheet that summarizes key calculus formulas and concepts.",
+    "level": "Beginner",
+    "tags": [
+      "Calculus",
+      "Data Science",
+      "Mathematics"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Computer Vision with OpenCV": {
+    "course_id": "computer-vision-with-opencv",
+    "title": "Computer Vision with OpenCV",
+    "item_type": "course",
+    "description": "This course introduces the fundamentals of computer vision using OpenCV. Learners will learn how to process and analyze images and videos.",
+    "level": "Intermediate",
+    "tags": [
+      "Computer Vision",
+      "OpenCV",
+      "Image Processing"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Image Processing Project": {
+    "course_id": "computer-vision-with-opencv-project",
+    "title": "Project: Image Processing Project",
+    "item_type": "project",
+    "description": "Develop a project that processes images using OpenCV techniques.",
+    "level": "Intermediate",
+    "tags": [
+      "Computer Vision",
+      "OpenCV",
+      "Image Processing"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Computer Vision with OpenCV"
+    ]
+  },
+  "Resource: OpenCV Documentation": {
+    "course_id": "computer-vision-with-opencv-resource",
+    "title": "Resource: OpenCV Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides detailed information on OpenCV functions and usage.",
+    "level": "Intermediate",
+    "tags": [
+      "Computer Vision",
+      "OpenCV",
+      "Image Processing"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Cybersecurity Fundamentals": {
+    "course_id": "cybersecurity-fundamentals",
+    "title": "Cybersecurity Fundamentals",
+    "item_type": "course",
+    "description": "This course provides an overview of cybersecurity principles and practices. Learners will understand key concepts such as threats, vulnerabilities, and security measures.",
+    "level": "Beginner",
+    "tags": [
+      "Cybersecurity",
+      "Fundamentals",
+      "Security"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": []
+  },
+  "Project: Cybersecurity Awareness Campaign": {
+    "course_id": "cybersecurity-fundamentals-project",
+    "title": "Project: Cybersecurity Awareness Campaign",
+    "item_type": "project",
+    "description": "Create a campaign to raise awareness about cybersecurity best practices.",
+    "level": "Beginner",
+    "tags": [
+      "Cybersecurity",
+      "Fundamentals",
+      "Security"
+    ],
+    "estimated_hours": 5,
+    "prerequisites": [
+      "Cybersecurity Fundamentals"
+    ]
+  },
+  "Resource: Cybersecurity Fundamentals Study Guide": {
+    "course_id": "cybersecurity-fundamentals-resource",
+    "title": "Resource: Cybersecurity Fundamentals Study Guide",
+    "item_type": "resource",
+    "description": "A study guide that covers essential topics in cybersecurity.",
+    "level": "Beginner",
+    "tags": [
+      "Cybersecurity",
+      "Fundamentals",
+      "Security"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Data Analysis with Pandas": {
+    "course_id": "data-analysis-with-pandas",
+    "title": "Data Analysis with Pandas",
+    "item_type": "course",
+    "description": "This course teaches how to analyze and manipulate data using the Pandas library in Python. Learners will gain practical skills in data analysis.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Analysis",
+      "Pandas",
+      "Python"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Data Analysis Project": {
+    "course_id": "python-for-data-science-project",
+    "title": "Project: Data Analysis Project",
+    "item_type": "project",
+    "description": "Analyze a dataset and create visualizations to present your findings.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Data Science",
+      "Pandas",
+      "Visualization",
+      "Analysis"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Python for Data Science"
+    ]
+  },
+  "Resource: Pandas Documentation": {
+    "course_id": "data-analysis-with-pandas-resource",
+    "title": "Resource: Pandas Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides detailed information on the Pandas library.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Analysis",
+      "Pandas",
+      "Python"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Data Engineering with Apache Spark": {
+    "course_id": "data-engineering-with-apache-spark",
+    "title": "Data Engineering with Apache Spark",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of data engineering using Apache Spark. Learners will understand how to process large datasets efficiently.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Engineering",
+      "Apache Spark",
+      "Big Data"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Data Processing Pipeline with Spark": {
+    "course_id": "data-engineering-with-apache-spark-project",
+    "title": "Project: Data Processing Pipeline with Spark",
+    "item_type": "project",
+    "description": "Build a data processing pipeline using Apache Spark to handle large datasets.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Engineering",
+      "Apache Spark",
+      "Big Data"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Data Engineering with Apache Spark"
+    ]
+  },
+  "Resource: Apache Spark Documentation": {
+    "course_id": "data-engineering-with-apache-spark-resource",
+    "title": "Resource: Apache Spark Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides comprehensive information on Apache Spark features.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Engineering",
+      "Apache Spark",
+      "Big Data"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Data Visualization with Matplotlib": {
+    "course_id": "data-visualization-with-matplotlib",
+    "title": "Data Visualization with Matplotlib",
+    "item_type": "course",
+    "description": "This course teaches how to create visualizations using the Matplotlib library in Python. Learners will understand how to effectively communicate data insights.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Visualization",
+      "Matplotlib",
+      "Python"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Create Data Visualizations": {
+    "course_id": "data-visualization-with-matplotlib-project",
+    "title": "Project: Create Data Visualizations",
+    "item_type": "project",
+    "description": "Develop a set of visualizations for a dataset using Matplotlib.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Visualization",
+      "Matplotlib",
+      "Python"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Data Visualization with Matplotlib"
+    ]
+  },
+  "Resource: Matplotlib Documentation": {
+    "course_id": "data-visualization-with-matplotlib-resource",
+    "title": "Resource: Matplotlib Documentation",
+    "item_type": "resource",
+    "description": "Official documentation that provides detailed information on the Matplotlib library.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Visualization",
+      "Matplotlib",
+      "Python"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Data Warehouse Design": {
+    "course_id": "data-warehouse-design",
+    "title": "Data Warehouse Design",
+    "item_type": "course",
+    "description": "This course teaches the principles and practices of designing effective data warehouses, focusing on data modeling and architecture.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Modeling",
+      "Architecture",
+      "ETL",
+      "Analytics"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Design a Data Warehouse": {
+    "course_id": "data-warehouse-design-project",
+    "title": "Project: Design a Data Warehouse",
+    "item_type": "project",
+    "description": "Create a data warehouse model for a fictional company based on given requirements.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Modeling",
+      "Architecture",
+      "ETL",
+      "Analytics"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Data Warehouse Design"
+    ]
+  },
+  "Resource: Data Warehouse Design Cheat Sheet": {
+    "course_id": "data-warehouse-design-resource",
+    "title": "Resource: Data Warehouse Design Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference guide summarizing key concepts and best practices in data warehouse design.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Modeling",
+      "Architecture",
+      "ETL",
+      "Analytics"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Database Performance Tuning": {
+    "course_id": "database-performance-tuning",
+    "title": "Database Performance Tuning",
+    "item_type": "course",
+    "description": "Learn techniques to optimize database performance, including indexing, query optimization, and resource management.",
+    "level": "Advanced",
+    "tags": [
+      "Performance",
+      "Optimization",
+      "SQL",
+      "Database"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": [
+      "Data Warehouse Design"
+    ]
+  },
+  "Project: Optimize a Database": {
+    "course_id": "database-performance-tuning-project",
+    "title": "Project: Optimize a Database",
+    "item_type": "project",
+    "description": "Analyze and improve the performance of a sample database using tuning techniques.",
+    "level": "Advanced",
+    "tags": [
+      "Performance",
+      "Optimization",
+      "SQL",
+      "Database"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Database Performance Tuning"
+    ]
+  },
+  "Resource: Database Tuning Reference Document": {
+    "course_id": "database-performance-tuning-resource",
+    "title": "Resource: Database Tuning Reference Document",
+    "item_type": "resource",
+    "description": "A comprehensive guide on best practices for database performance tuning.",
+    "level": "Advanced",
+    "tags": [
+      "Performance",
+      "Optimization",
+      "SQL",
+      "Database"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Deep Learning with PyTorch": {
+    "course_id": "deep-learning-with-pytorch",
+    "title": "Deep Learning with PyTorch",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of deep learning using the PyTorch framework, including neural network design and training.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "PyTorch",
+      "Neural Networks",
+      "AI"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Feature Engineering for ML"
+    ]
+  },
+  "Project: Build a Neural Network": {
+    "course_id": "deep-learning-with-pytorch-project",
+    "title": "Project: Build a Neural Network",
+    "item_type": "project",
+    "description": "Create and train a neural network to classify images using PyTorch.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "PyTorch",
+      "Neural Networks",
+      "AI"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Deep Learning with PyTorch"
+    ]
+  },
+  "Resource: PyTorch Deep Learning Cheat Sheet": {
+    "course_id": "deep-learning-with-pytorch-resource",
+    "title": "Resource: PyTorch Deep Learning Cheat Sheet",
+    "item_type": "resource",
+    "description": "A handy reference for PyTorch functions and deep learning concepts.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "PyTorch",
+      "Neural Networks",
+      "AI"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Deep Learning with TensorFlow": {
+    "course_id": "deep-learning-with-tensorflow",
+    "title": "Deep Learning with TensorFlow",
+    "item_type": "course",
+    "description": "Explore deep learning concepts and techniques using TensorFlow, focusing on model building and deployment.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "TensorFlow",
+      "AI",
+      "Neural Networks"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Feature Engineering for ML"
+    ]
+  },
+  "Project: Create a TensorFlow Model": {
+    "course_id": "deep-learning-with-tensorflow-project",
+    "title": "Project: Create a TensorFlow Model",
+    "item_type": "project",
+    "description": "Develop and deploy a deep learning model for image recognition using TensorFlow.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "TensorFlow",
+      "AI",
+      "Neural Networks"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Deep Learning with TensorFlow"
+    ]
+  },
+  "Resource: TensorFlow Deep Learning Reference Guide": {
+    "course_id": "deep-learning-with-tensorflow-resource",
+    "title": "Resource: TensorFlow Deep Learning Reference Guide",
+    "item_type": "resource",
+    "description": "A resource outlining key TensorFlow functions and deep learning practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Deep Learning",
+      "TensorFlow",
+      "AI",
+      "Neural Networks"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "DevOps Practices and Tools": {
+    "course_id": "devops-practices-and-tools",
+    "title": "DevOps Practices and Tools",
+    "item_type": "course",
+    "description": "Learn the essential practices and tools of DevOps, including continuous integration, delivery, and deployment.",
+    "level": "Intermediate",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Automation",
+      "Tools"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Resource: DevOps Tools Overview": {
+    "course_id": "devops-practices-and-tools-resource",
+    "title": "Resource: DevOps Tools Overview",
+    "item_type": "resource",
+    "description": "A summary of popular DevOps tools and their functionalities.",
+    "level": "Intermediate",
+    "tags": [
+      "DevOps",
+      "CI/CD",
+      "Automation",
+      "Tools"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Django Web Framework": {
+    "course_id": "django-web-framework",
+    "title": "Django Web Framework",
+    "item_type": "course",
+    "description": "This course introduces Django, a high-level Python web framework, covering its architecture and components.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Development",
+      "Django",
+      "Python",
+      "Framework"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Build a Django Application": {
+    "course_id": "django-web-framework-project",
+    "title": "Project: Build a Django Application",
+    "item_type": "project",
+    "description": "Create a simple web application using the Django framework.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Development",
+      "Django",
+      "Python",
+      "Framework"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Django Web Framework"
+    ]
+  },
+  "Resource: Django Framework Cheat Sheet": {
+    "course_id": "django-web-framework-resource",
+    "title": "Resource: Django Framework Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference for Django commands and best practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Development",
+      "Django",
+      "Python",
+      "Framework"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Docker and Containerization": {
+    "course_id": "docker-and-containerization",
+    "title": "Docker and Containerization",
+    "item_type": "course",
+    "description": "Learn the basics of Docker and containerization, including how to create and manage containers.",
+    "level": "Intermediate",
+    "tags": [
+      "Docker",
+      "Containerization",
+      "DevOps",
+      "Virtualization"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Containerize an Application": {
+    "course_id": "docker-and-containerization-project",
+    "title": "Project: Containerize an Application",
+    "item_type": "project",
+    "description": "Package a simple application into a Docker container and run it.",
+    "level": "Intermediate",
+    "tags": [
+      "Docker",
+      "Containerization",
+      "DevOps",
+      "Virtualization"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Docker and Containerization"
+    ]
+  },
+  "Resource: Docker Commands Reference": {
+    "course_id": "docker-and-containerization-resource",
+    "title": "Resource: Docker Commands Reference",
+    "item_type": "resource",
+    "description": "A guide to common Docker commands and their usage.",
+    "level": "Intermediate",
+    "tags": [
+      "Docker",
+      "Containerization",
+      "DevOps",
+      "Virtualization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "ETL Pipeline Development": {
+    "course_id": "etl-pipeline-development",
+    "title": "ETL Pipeline Development",
+    "item_type": "course",
+    "description": "This course teaches how to design and implement ETL (Extract, Transform, Load) pipelines for data integration.",
+    "level": "Intermediate",
+    "tags": [
+      "ETL",
+      "Data Integration",
+      "Data Engineering",
+      "Pipelines"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "Data Warehouse Design"
+    ]
+  },
+  "Project: Build an ETL Pipeline": {
+    "course_id": "etl-pipeline-development-project",
+    "title": "Project: Build an ETL Pipeline",
+    "item_type": "project",
+    "description": "Create an ETL pipeline that extracts data from a source, transforms it, and loads it into a data warehouse.",
+    "level": "Intermediate",
+    "tags": [
+      "ETL",
+      "Data Integration",
+      "Data Engineering",
+      "Pipelines"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "ETL Pipeline Development"
+    ]
+  },
+  "Resource: ETL Pipeline Development Guide": {
+    "course_id": "etl-pipeline-development-resource",
+    "title": "Resource: ETL Pipeline Development Guide",
+    "item_type": "resource",
+    "description": "A resource outlining best practices for developing ETL pipelines.",
+    "level": "Intermediate",
+    "tags": [
+      "ETL",
+      "Data Integration",
+      "Data Engineering",
+      "Pipelines"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Embedded Systems Programming": {
+    "course_id": "embedded-systems-programming",
+    "title": "Embedded Systems Programming",
+    "item_type": "course",
+    "description": "Explore the fundamentals of programming embedded systems, including hardware interaction and real-time constraints.",
+    "level": "Advanced",
+    "tags": [
+      "Embedded Systems",
+      "Programming",
+      "Hardware",
+      "Real-time"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": []
+  },
+  "Project: Develop an Embedded Application": {
+    "course_id": "embedded-systems-programming-project",
+    "title": "Project: Develop an Embedded Application",
+    "item_type": "project",
+    "description": "Create a simple embedded application that interacts with hardware components.",
+    "level": "Advanced",
+    "tags": [
+      "Embedded Systems",
+      "Programming",
+      "Hardware",
+      "Real-time"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Embedded Systems Programming"
+    ]
+  },
+  "Resource: Embedded Systems Programming Reference": {
+    "course_id": "embedded-systems-programming-resource",
+    "title": "Resource: Embedded Systems Programming Reference",
+    "item_type": "resource",
+    "description": "A guide to programming concepts and techniques for embedded systems.",
+    "level": "Advanced",
+    "tags": [
+      "Embedded Systems",
+      "Programming",
+      "Hardware",
+      "Real-time"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Ethical Hacking Basics": {
+    "course_id": "ethical-hacking-basics",
+    "title": "Ethical Hacking Basics",
+    "item_type": "course",
+    "description": "Learn the foundational concepts of ethical hacking, including penetration testing and security assessments.",
+    "level": "Beginner",
+    "tags": [
+      "Ethical Hacking",
+      "Security",
+      "Penetration Testing",
+      "Cybersecurity"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Conduct a Security Assessment": {
+    "course_id": "ethical-hacking-basics-project",
+    "title": "Project: Conduct a Security Assessment",
+    "item_type": "project",
+    "description": "Perform a basic security assessment on a sample application.",
+    "level": "Beginner",
+    "tags": [
+      "Ethical Hacking",
+      "Security",
+      "Penetration Testing",
+      "Cybersecurity"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Ethical Hacking Basics"
+    ]
+  },
+  "Resource: Ethical Hacking Basics Cheat Sheet": {
+    "course_id": "ethical-hacking-basics-resource",
+    "title": "Resource: Ethical Hacking Basics Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference for ethical hacking techniques and tools.",
+    "level": "Beginner",
+    "tags": [
+      "Ethical Hacking",
+      "Security",
+      "Penetration Testing",
+      "Cybersecurity"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Excel for Data Analysis": {
+    "course_id": "excel-for-data-analysis",
+    "title": "Excel for Data Analysis",
+    "item_type": "course",
+    "description": "This course covers the use of Excel for data analysis, including functions, formulas, and data visualization techniques.",
+    "level": "Beginner",
+    "tags": [
+      "Excel",
+      "Data Analysis",
+      "Spreadsheets",
+      "Visualization"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": []
+  },
+  "Project: Analyze Data with Excel": {
+    "course_id": "excel-for-data-analysis-project",
+    "title": "Project: Analyze Data with Excel",
+    "item_type": "project",
+    "description": "Use Excel to analyze a dataset and create visualizations.",
+    "level": "Beginner",
+    "tags": [
+      "Excel",
+      "Data Analysis",
+      "Spreadsheets",
+      "Visualization"
+    ],
+    "estimated_hours": 5,
+    "prerequisites": [
+      "Excel for Data Analysis"
+    ]
+  },
+  "Resource: Excel Functions Reference": {
+    "course_id": "excel-for-data-analysis-resource",
+    "title": "Resource: Excel Functions Reference",
+    "item_type": "resource",
+    "description": "A guide to commonly used Excel functions and formulas.",
+    "level": "Beginner",
+    "tags": [
+      "Excel",
+      "Data Analysis",
+      "Spreadsheets",
+      "Visualization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Exploratory Data Analysis": {
+    "course_id": "exploratory-data-analysis",
+    "title": "Exploratory Data Analysis",
+    "item_type": "course",
+    "description": "Learn techniques for exploratory data analysis (EDA), including data visualization and statistical summaries.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Analysis",
+      "Visualization",
+      "Statistics",
+      "EDA"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "Excel for Data Analysis"
+    ]
+  },
+  "Project: Perform EDA on a Dataset": {
+    "course_id": "exploratory-data-analysis-project",
+    "title": "Project: Perform EDA on a Dataset",
+    "item_type": "project",
+    "description": "Conduct exploratory data analysis on a provided dataset and present findings.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Analysis",
+      "Visualization",
+      "Statistics",
+      "EDA"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Exploratory Data Analysis"
+    ]
+  },
+  "Resource: EDA Techniques Reference": {
+    "course_id": "exploratory-data-analysis-resource",
+    "title": "Resource: EDA Techniques Reference",
+    "item_type": "resource",
+    "description": "A resource summarizing common techniques and tools for exploratory data analysis.",
+    "level": "Intermediate",
+    "tags": [
+      "Data Analysis",
+      "Visualization",
+      "Statistics",
+      "EDA"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Feature Engineering for ML": {
+    "course_id": "feature-engineering-for-ml",
+    "title": "Feature Engineering for ML",
+    "item_type": "course",
+    "description": "This course focuses on feature engineering techniques for machine learning, including feature selection and transformation.",
+    "level": "Intermediate",
+    "tags": [
+      "Machine Learning",
+      "Feature Engineering",
+      "Data Preparation",
+      "ML"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Engineer Features for a Model": {
+    "course_id": "feature-engineering-for-ml-project",
+    "title": "Project: Engineer Features for a Model",
+    "item_type": "project",
+    "description": "Create and select features for a machine learning model using a sample dataset.",
+    "level": "Intermediate",
+    "tags": [
+      "Machine Learning",
+      "Feature Engineering",
+      "Data Preparation",
+      "ML"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Feature Engineering for ML"
+    ]
+  },
+  "Resource: Feature Engineering Techniques Guide": {
+    "course_id": "feature-engineering-for-ml-resource",
+    "title": "Resource: Feature Engineering Techniques Guide",
+    "item_type": "resource",
+    "description": "A guide to common feature engineering techniques and best practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Machine Learning",
+      "Feature Engineering",
+      "Data Preparation",
+      "ML"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Flask API Development": {
+    "course_id": "flask-api-development",
+    "title": "Flask API Development",
+    "item_type": "course",
+    "description": "Learn how to build RESTful APIs using the Flask web framework, focusing on routing and data handling.",
+    "level": "Intermediate",
+    "tags": [
+      "Flask",
+      "API",
+      "Web Development",
+      "Python"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Create a Flask API": {
+    "course_id": "flask-api-development-project",
+    "title": "Project: Create a Flask API",
+    "item_type": "project",
+    "description": "Develop a RESTful API using Flask to manage a simple resource.",
+    "level": "Intermediate",
+    "tags": [
+      "Flask",
+      "API",
+      "Web Development",
+      "Python"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Flask API Development"
+    ]
+  },
+  "Resource: Flask API Development Cheat Sheet": {
+    "course_id": "flask-api-development-resource",
+    "title": "Resource: Flask API Development Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference for Flask commands and API development practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Flask",
+      "API",
+      "Web Development",
+      "Python"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Flutter Cross Platform Apps": {
+    "course_id": "flutter-cross-platform-apps",
+    "title": "Flutter Cross Platform Apps",
+    "item_type": "course",
+    "description": "This course teaches how to develop cross-platform mobile applications using the Flutter framework.",
+    "level": "Intermediate",
+    "tags": [
+      "Flutter",
+      "Mobile Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Build a Flutter App": {
+    "course_id": "flutter-cross-platform-apps-project",
+    "title": "Project: Build a Flutter App",
+    "item_type": "project",
+    "description": "Create a simple cross-platform mobile application using Flutter.",
+    "level": "Intermediate",
+    "tags": [
+      "Flutter",
+      "Mobile Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Flutter Cross Platform Apps"
+    ]
+  },
+  "Resource: Flutter Development Reference": {
+    "course_id": "flutter-cross-platform-apps-resource",
+    "title": "Resource: Flutter Development Reference",
+    "item_type": "resource",
+    "description": "A guide to Flutter widgets and development practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Flutter",
+      "Mobile Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Generative AI and Prompt Engineering": {
+    "course_id": "generative-ai-and-prompt-engineering",
+    "title": "Generative AI and Prompt Engineering",
+    "item_type": "course",
+    "description": "Explore the concepts of generative AI and learn how to craft effective prompts for AI models.",
+    "level": "Intermediate",
+    "tags": [
+      "Generative AI",
+      "Prompt Engineering",
+      "AI",
+      "Machine Learning"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Create AI Prompts": {
+    "course_id": "generative-ai-and-prompt-engineering-project",
+    "title": "Project: Create AI Prompts",
+    "item_type": "project",
+    "description": "Develop prompts for a generative AI model to produce creative outputs.",
+    "level": "Intermediate",
+    "tags": [
+      "Generative AI",
+      "Prompt Engineering",
+      "AI",
+      "Machine Learning"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Generative AI and Prompt Engineering"
+    ]
+  },
+  "Resource: Prompt Engineering Guide": {
+    "course_id": "generative-ai-and-prompt-engineering-resource",
+    "title": "Resource: Prompt Engineering Guide",
+    "item_type": "resource",
+    "description": "A resource outlining best practices for crafting prompts for AI models.",
+    "level": "Intermediate",
+    "tags": [
+      "Generative AI",
+      "Prompt Engineering",
+      "AI",
+      "Machine Learning"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Git and GitHub Mastery": {
+    "course_id": "git-and-github-mastery",
+    "title": "Git and GitHub Mastery",
+    "item_type": "course",
+    "description": "Master version control using Git and GitHub, covering branching, merging, and collaboration techniques.",
+    "level": "Intermediate",
+    "tags": [
+      "Git",
+      "GitHub",
+      "Version Control",
+      "Collaboration"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Manage a Git Repository": {
+    "course_id": "git-and-github-mastery-project",
+    "title": "Project: Manage a Git Repository",
+    "item_type": "project",
+    "description": "Create and manage a Git repository for a sample project, demonstrating version control practices.",
+    "level": "Intermediate",
+    "tags": [
+      "Git",
+      "GitHub",
+      "Version Control",
+      "Collaboration"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Git and GitHub Mastery"
+    ]
+  },
+  "Resource: Git Commands Reference": {
+    "course_id": "git-and-github-mastery-resource",
+    "title": "Resource: Git Commands Reference",
+    "item_type": "resource",
+    "description": "A guide to essential Git commands and workflows.",
+    "level": "Intermediate",
+    "tags": [
+      "Git",
+      "GitHub",
+      "Version Control",
+      "Collaboration"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Go Language for Backend": {
+    "course_id": "go-language-for-backend",
+    "title": "Go Language for Backend",
+    "item_type": "course",
+    "description": "Learn the Go programming language and its application in backend development, focusing on concurrency and performance.",
+    "level": "Intermediate",
+    "tags": [
+      "Go",
+      "Backend",
+      "Programming",
+      "Concurrency"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Build a Go Backend Service": {
+    "course_id": "go-language-for-backend-project",
+    "title": "Project: Build a Go Backend Service",
+    "item_type": "project",
+    "description": "Create a simple backend service using Go that handles HTTP requests.",
+    "level": "Intermediate",
+    "tags": [
+      "Go",
+      "Backend",
+      "Programming",
+      "Concurrency"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Go Language for Backend"
+    ]
+  },
+  "Resource: Go Language Reference": {
+    "course_id": "go-language-for-backend-resource",
+    "title": "Resource: Go Language Reference",
+    "item_type": "resource",
+    "description": "A guide to Go language syntax and features.",
+    "level": "Intermediate",
+    "tags": [
+      "Go",
+      "Backend",
+      "Programming",
+      "Concurrency"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Google Cloud Platform Basics": {
+    "course_id": "google-cloud-platform-basics",
+    "title": "Google Cloud Platform Basics",
+    "item_type": "course",
+    "description": "This course introduces the basics of Google Cloud Platform (GCP), covering core services and deployment.",
+    "level": "Beginner",
+    "tags": [
+      "Google Cloud",
+      "Cloud Computing",
+      "GCP",
+      "Deployment"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": []
+  },
+  "Project: Deploy a Simple App on GCP": {
+    "course_id": "google-cloud-platform-basics-project",
+    "title": "Project: Deploy a Simple App on GCP",
+    "item_type": "project",
+    "description": "Deploy a basic web application on Google Cloud Platform.",
+    "level": "Beginner",
+    "tags": [
+      "Google Cloud",
+      "Cloud Computing",
+      "GCP",
+      "Deployment"
+    ],
+    "estimated_hours": 5,
+    "prerequisites": [
+      "Google Cloud Platform Basics"
+    ]
+  },
+  "Resource: GCP Basics Reference": {
+    "course_id": "google-cloud-platform-basics-resource",
+    "title": "Resource: GCP Basics Reference",
+    "item_type": "resource",
+    "description": "A guide to core Google Cloud services and their functionalities.",
+    "level": "Beginner",
+    "tags": [
+      "Google Cloud",
+      "Cloud Computing",
+      "GCP",
+      "Deployment"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "GraphQL API Development": {
+    "course_id": "graphql-api-development",
+    "title": "GraphQL API Development",
+    "item_type": "course",
+    "description": "Learn how to build APIs using GraphQL, focusing on schema design and query optimization.",
+    "level": "Intermediate",
+    "tags": [
+      "GraphQL",
+      "API",
+      "Web Development",
+      "Queries"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Create a GraphQL API": {
+    "course_id": "graphql-api-development-project",
+    "title": "Project: Create a GraphQL API",
+    "item_type": "project",
+    "description": "Develop a GraphQL API to manage data for a sample application.",
+    "level": "Intermediate",
+    "tags": [
+      "GraphQL",
+      "API",
+      "Web Development",
+      "Queries"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "GraphQL API Development"
+    ]
+  },
+  "Resource: GraphQL Development Guide": {
+    "course_id": "graphql-api-development-resource",
+    "title": "Resource: GraphQL Development Guide",
+    "item_type": "resource",
+    "description": "A resource outlining best practices for GraphQL API development.",
+    "level": "Intermediate",
+    "tags": [
+      "GraphQL",
+      "API",
+      "Web Development",
+      "Queries"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "HTML and CSS for Beginners": {
+    "course_id": "html-and-css-for-beginners",
+    "title": "HTML and CSS for Beginners",
+    "item_type": "course",
+    "description": "This course introduces the fundamental concepts of HTML and CSS, enabling learners to create and style basic web pages. Students will gain hands-on experience in building their first website.",
+    "level": "Beginner",
+    "tags": [
+      "HTML",
+      "CSS",
+      "Web Development"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Personal Portfolio Website": {
+    "course_id": "html-and-css-for-beginners-project",
+    "title": "Project: Personal Portfolio Website",
+    "item_type": "project",
+    "description": "Create a simple personal portfolio website showcasing your skills and projects.",
+    "level": "Beginner",
+    "tags": [
+      "HTML",
+      "CSS",
+      "Web Development"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "HTML and CSS for Beginners"
+    ]
+  },
+  "Resource: HTML & CSS Cheat Sheet": {
+    "course_id": "html-and-css-for-beginners-resource",
+    "title": "Resource: HTML & CSS Cheat Sheet",
+    "item_type": "resource",
+    "description": "A handy reference guide for HTML tags and CSS properties to reinforce your learning.",
+    "level": "Beginner",
+    "tags": [
+      "HTML",
+      "CSS",
+      "Web Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Hypothesis Testing in Practice": {
+    "course_id": "hypothesis-testing-in-practice",
+    "title": "Hypothesis Testing in Practice",
+    "item_type": "course",
+    "description": "This course covers the practical application of hypothesis testing techniques in various scenarios. Learners will understand how to interpret results and make data-driven decisions.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Data Analysis",
+      "Hypothesis Testing"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "Probability and Statistics"
+    ]
+  },
+  "Project: A/B Testing Analysis": {
+    "course_id": "hypothesis-testing-in-practice-project",
+    "title": "Project: A/B Testing Analysis",
+    "item_type": "project",
+    "description": "Conduct an A/B test and analyze the results to determine the effectiveness of two different marketing strategies.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Data Analysis",
+      "Hypothesis Testing"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Hypothesis Testing in Practice"
+    ]
+  },
+  "Resource: Hypothesis Testing Reference Guide": {
+    "course_id": "hypothesis-testing-in-practice-resource",
+    "title": "Resource: Hypothesis Testing Reference Guide",
+    "item_type": "resource",
+    "description": "A concise reference document outlining key concepts and formulas related to hypothesis testing.",
+    "level": "Intermediate",
+    "tags": [
+      "Statistics",
+      "Data Analysis",
+      "Hypothesis Testing"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "IoT with Raspberry Pi": {
+    "course_id": "iot-with-raspberry-pi",
+    "title": "IoT with Raspberry Pi",
+    "item_type": "course",
+    "description": "This course teaches how to build Internet of Things (IoT) applications using Raspberry Pi. Learners will explore hardware interfacing, data collection, and cloud integration.",
+    "level": "Intermediate",
+    "tags": [
+      "IoT",
+      "Raspberry Pi",
+      "Hardware"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": [
+      "Linux Command Line Essentials"
+    ]
+  },
+  "Project: Smart Home Automation System": {
+    "course_id": "iot-with-raspberry-pi-project",
+    "title": "Project: Smart Home Automation System",
+    "item_type": "project",
+    "description": "Develop a smart home automation system that controls devices based on user input and environmental data.",
+    "level": "Intermediate",
+    "tags": [
+      "IoT",
+      "Raspberry Pi",
+      "Hardware"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "IoT with Raspberry Pi"
+    ]
+  },
+  "Resource: IoT Project Ideas Document": {
+    "course_id": "iot-with-raspberry-pi-resource",
+    "title": "Resource: IoT Project Ideas Document",
+    "item_type": "resource",
+    "description": "A collection of project ideas and resources for further exploration in IoT development.",
+    "level": "Intermediate",
+    "tags": [
+      "IoT",
+      "Raspberry Pi",
+      "Hardware"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Java Programming Basics": {
+    "course_id": "java-programming-basics",
+    "title": "Java Programming Basics",
+    "item_type": "course",
+    "description": "This course provides an introduction to Java programming, covering basic syntax, data types, and control structures. It's designed for those new to programming.",
+    "level": "Beginner",
+    "tags": [
+      "Java",
+      "Programming",
+      "Basics"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Basic Calculator Application": {
+    "course_id": "java-programming-basics-project",
+    "title": "Project: Basic Calculator Application",
+    "item_type": "project",
+    "description": "Build a simple calculator application that performs basic arithmetic operations.",
+    "level": "Beginner",
+    "tags": [
+      "Java",
+      "Programming",
+      "Basics"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Java Programming Basics"
+    ]
+  },
+  "Resource: Java Basics Cheat Sheet": {
+    "course_id": "java-programming-basics-resource",
+    "title": "Resource: Java Basics Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference guide for Java syntax and programming concepts.",
+    "level": "Beginner",
+    "tags": [
+      "Java",
+      "Programming",
+      "Basics"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "JavaScript Full Stack Development": {
+    "course_id": "javascript-full-stack-development",
+    "title": "JavaScript Full Stack Development",
+    "item_type": "course",
+    "description": "This comprehensive course covers both front-end and back-end JavaScript development, equipping learners with the skills to build full-stack applications. Topics include Node.js, Express, and MongoDB.",
+    "level": "Advanced",
+    "tags": [
+      "JavaScript",
+      "Full Stack",
+      "Web Development"
+    ],
+    "estimated_hours": 40,
+    "prerequisites": [
+      "JavaScript Fundamentals",
+      "MongoDB for Developers",
+      "Node.js Backend Development"
+    ]
+  },
+  "Project: Full Stack Web Application": {
+    "course_id": "javascript-full-stack-development-project",
+    "title": "Project: Full Stack Web Application",
+    "item_type": "project",
+    "description": "Create a full-stack web application that allows users to interact with a database and perform CRUD operations.",
+    "level": "Advanced",
+    "tags": [
+      "JavaScript",
+      "Full Stack",
+      "Web Development"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "JavaScript Full Stack Development"
+    ]
+  },
+  "Resource: Full Stack Development Resources": {
+    "course_id": "javascript-full-stack-development-resource",
+    "title": "Resource: Full Stack Development Resources",
+    "item_type": "resource",
+    "description": "A compilation of resources and tools for full-stack JavaScript development.",
+    "level": "Advanced",
+    "tags": [
+      "JavaScript",
+      "Full Stack",
+      "Web Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "JavaScript Fundamentals": {
+    "course_id": "javascript-fundamentals",
+    "title": "JavaScript Fundamentals",
+    "item_type": "course",
+    "description": "This course covers the essential concepts of JavaScript, including variables, functions, and DOM manipulation. It's perfect for beginners looking to understand the language.",
+    "level": "Beginner",
+    "tags": [
+      "JavaScript",
+      "Programming",
+      "Web Development"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "HTML and CSS for Beginners"
+    ]
+  },
+  "Project: Interactive Web Page": {
+    "course_id": "javascript-fundamentals-project",
+    "title": "Project: Interactive Web Page",
+    "item_type": "project",
+    "description": "Build an interactive web page that responds to user actions using JavaScript.",
+    "level": "Beginner",
+    "tags": [
+      "JavaScript",
+      "Programming",
+      "Web Development"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "JavaScript Fundamentals"
+    ]
+  },
+  "Resource: JavaScript Fundamentals Reference": {
+    "course_id": "javascript-fundamentals-resource",
+    "title": "Resource: JavaScript Fundamentals Reference",
+    "item_type": "resource",
+    "description": "A reference document summarizing key JavaScript concepts and functions.",
+    "level": "Beginner",
+    "tags": [
+      "JavaScript",
+      "Programming",
+      "Web Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Kubernetes Orchestration": {
+    "course_id": "kubernetes-orchestration",
+    "title": "Kubernetes Orchestration",
+    "item_type": "course",
+    "description": "This course teaches how to use Kubernetes for container orchestration, focusing on deployment, scaling, and management of applications in a cloud environment.",
+    "level": "Advanced",
+    "tags": [
+      "Kubernetes",
+      "DevOps",
+      "Containerization"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "IoT with Raspberry Pi"
+    ]
+  },
+  "Project: Deploying a Microservices Application": {
+    "course_id": "kubernetes-orchestration-project",
+    "title": "Project: Deploying a Microservices Application",
+    "item_type": "project",
+    "description": "Deploy a microservices application using Kubernetes and manage its lifecycle.",
+    "level": "Advanced",
+    "tags": [
+      "Kubernetes",
+      "DevOps",
+      "Containerization"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Kubernetes Orchestration"
+    ]
+  },
+  "Resource: Kubernetes Cheat Sheet": {
+    "course_id": "kubernetes-orchestration-resource",
+    "title": "Resource: Kubernetes Cheat Sheet",
+    "item_type": "resource",
+    "description": "A quick reference guide for Kubernetes commands and concepts.",
+    "level": "Advanced",
+    "tags": [
+      "Kubernetes",
+      "DevOps",
+      "Containerization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Linear Algebra for Machine Learning": {
+    "course_id": "linear-algebra-for-machine-learning",
+    "title": "Linear Algebra for Machine Learning",
+    "item_type": "course",
+    "description": "This course covers the essential linear algebra concepts needed for understanding machine learning algorithms. Learners will explore vectors, matrices, and transformations.",
+    "level": "Intermediate",
+    "tags": [
+      "Linear Algebra",
+      "Machine Learning",
+      "Mathematics"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Matrix Operations Project": {
+    "course_id": "linear-algebra-for-machine-learning-project",
+    "title": "Project: Matrix Operations Project",
+    "item_type": "project",
+    "description": "Implement matrix operations and transformations in Python to reinforce linear algebra concepts.",
+    "level": "Intermediate",
+    "tags": [
+      "Linear Algebra",
+      "Machine Learning",
+      "Mathematics"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Linear Algebra for Machine Learning"
+    ]
+  },
+  "Resource: Linear Algebra Reference Guide": {
+    "course_id": "linear-algebra-for-machine-learning-resource",
+    "title": "Resource: Linear Algebra Reference Guide",
+    "item_type": "resource",
+    "description": "A reference document summarizing key linear algebra concepts and formulas.",
+    "level": "Intermediate",
+    "tags": [
+      "Linear Algebra",
+      "Machine Learning",
+      "Mathematics"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Linux Command Line Essentials": {
+    "course_id": "linux-command-line-essentials",
+    "title": "Linux Command Line Essentials",
+    "item_type": "course",
+    "description": "This course introduces the basics of using the Linux command line, covering file management, system navigation, and basic scripting. It's essential for anyone working in a Linux environment.",
+    "level": "Beginner",
+    "tags": [
+      "Linux",
+      "Command Line",
+      "Scripting"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: File Management Script": {
+    "course_id": "linux-command-line-essentials-project",
+    "title": "Project: File Management Script",
+    "item_type": "project",
+    "description": "Create a script that automates file management tasks in the Linux command line.",
+    "level": "Beginner",
+    "tags": [
+      "Linux",
+      "Command Line",
+      "Scripting"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Linux Command Line Essentials"
+    ]
+  },
+  "Resource: Linux Command Line Cheat Sheet": {
+    "course_id": "linux-command-line-essentials-resource",
+    "title": "Resource: Linux Command Line Cheat Sheet",
+    "item_type": "resource",
+    "description": "A handy reference guide for common Linux command line commands.",
+    "level": "Beginner",
+    "tags": [
+      "Linux",
+      "Command Line",
+      "Scripting"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "MLOps and Model Deployment": {
+    "course_id": "mlops-and-model-deployment",
+    "title": "MLOps and Model Deployment",
+    "item_type": "course",
+    "description": "This course focuses on the practices and tools for deploying machine learning models into production. Learners will explore MLOps principles and CI/CD pipelines.",
+    "level": "Advanced",
+    "tags": [
+      "MLOps",
+      "Machine Learning",
+      "Deployment"
+    ],
+    "estimated_hours": 35,
+    "prerequisites": [
+      "Machine Learning Fundamentals"
+    ]
+  },
+  "Project: Deploying a Machine Learning Model": {
+    "course_id": "mlops-and-model-deployment-project",
+    "title": "Project: Deploying a Machine Learning Model",
+    "item_type": "project",
+    "description": "Deploy a machine learning model using a CI/CD pipeline and monitor its performance.",
+    "level": "Advanced",
+    "tags": [
+      "MLOps",
+      "Machine Learning",
+      "Deployment"
+    ],
+    "estimated_hours": 17,
+    "prerequisites": [
+      "MLOps and Model Deployment"
+    ]
+  },
+  "Resource: MLOps Best Practices Guide": {
+    "course_id": "mlops-and-model-deployment-resource",
+    "title": "Resource: MLOps Best Practices Guide",
+    "item_type": "resource",
+    "description": "A guide outlining best practices and tools for MLOps and model deployment.",
+    "level": "Advanced",
+    "tags": [
+      "MLOps",
+      "Machine Learning",
+      "Deployment"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Machine Learning Fundamentals": {
+    "course_id": "machine-learning-fundamentals",
+    "title": "Machine Learning Fundamentals",
+    "item_type": "course",
+    "description": "This course provides an introduction to machine learning concepts, including supervised and unsupervised learning, algorithms, and model evaluation. It's designed for beginners in the field.",
+    "level": "Beginner",
+    "tags": [
+      "Machine Learning",
+      "AI",
+      "Data Science"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Predictive Model Creation": {
+    "course_id": "machine-learning-fundamentals-project",
+    "title": "Project: Predictive Model Creation",
+    "item_type": "project",
+    "description": "Build a simple predictive model using a dataset and evaluate its performance.",
+    "level": "Beginner",
+    "tags": [
+      "Machine Learning",
+      "AI",
+      "Data Science"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Machine Learning Fundamentals"
+    ]
+  },
+  "Resource: Machine Learning Fundamentals Reference": {
+    "course_id": "machine-learning-fundamentals-resource",
+    "title": "Resource: Machine Learning Fundamentals Reference",
+    "item_type": "resource",
+    "description": "A reference document summarizing key machine learning concepts and algorithms.",
+    "level": "Beginner",
+    "tags": [
+      "Machine Learning",
+      "AI",
+      "Data Science"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Modern JavaScript ES6 Plus": {
+    "course_id": "modern-javascript-es6-plus",
+    "title": "Modern JavaScript ES6 Plus",
+    "item_type": "course",
+    "description": "This course covers the new features and syntax introduced in ES6 and beyond, enhancing JavaScript programming skills. Learners will explore modern practices and tools.",
+    "level": "Intermediate",
+    "tags": [
+      "JavaScript",
+      "ES6",
+      "Web Development"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "JavaScript Fundamentals"
+    ]
+  },
+  "Project: ES6 Features Implementation": {
+    "course_id": "modern-javascript-es6-plus-project",
+    "title": "Project: ES6 Features Implementation",
+    "item_type": "project",
+    "description": "Implement various ES6 features in a JavaScript project to enhance code quality and readability.",
+    "level": "Intermediate",
+    "tags": [
+      "JavaScript",
+      "ES6",
+      "Web Development"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Modern JavaScript ES6 Plus"
+    ]
+  },
+  "Resource: Modern JavaScript Reference": {
+    "course_id": "modern-javascript-es6-plus-resource",
+    "title": "Resource: Modern JavaScript Reference",
+    "item_type": "resource",
+    "description": "A reference document summarizing key ES6 features and best practices.",
+    "level": "Intermediate",
+    "tags": [
+      "JavaScript",
+      "ES6",
+      "Web Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "MongoDB for Developers": {
+    "course_id": "mongodb-for-developers",
+    "title": "MongoDB for Developers",
+    "item_type": "course",
+    "description": "This course teaches how to work with MongoDB, covering data modeling, querying, and indexing. It's essential for developers building applications with NoSQL databases.",
+    "level": "Intermediate",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "NoSQL"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: CRUD Application with MongoDB": {
+    "course_id": "mongodb-for-developers-project",
+    "title": "Project: CRUD Application with MongoDB",
+    "item_type": "project",
+    "description": "Create a CRUD application using MongoDB to manage data effectively.",
+    "level": "Intermediate",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "NoSQL"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "MongoDB for Developers"
+    ]
+  },
+  "Resource: MongoDB Documentation": {
+    "course_id": "mongodb-for-developers-resource",
+    "title": "Resource: MongoDB Documentation",
+    "item_type": "resource",
+    "description": "Official documentation providing comprehensive information on MongoDB features and usage.",
+    "level": "Intermediate",
+    "tags": [
+      "MongoDB",
+      "Database",
+      "NoSQL"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Natural Language Processing": {
+    "course_id": "natural-language-processing",
+    "title": "Natural Language Processing",
+    "item_type": "course",
+    "description": "This course introduces the concepts and techniques of natural language processing (NLP). Learners will explore text processing, sentiment analysis, and language models.",
+    "level": "Intermediate",
+    "tags": [
+      "NLP",
+      "Machine Learning",
+      "Text Processing"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Machine Learning Fundamentals"
+    ]
+  },
+  "Project: Sentiment Analysis Tool": {
+    "course_id": "natural-language-processing-project",
+    "title": "Project: Sentiment Analysis Tool",
+    "item_type": "project",
+    "description": "Develop a sentiment analysis tool that classifies text data based on sentiment.",
+    "level": "Intermediate",
+    "tags": [
+      "NLP",
+      "Machine Learning",
+      "Text Processing"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Natural Language Processing"
+    ]
+  },
+  "Resource: NLP Techniques Reference": {
+    "course_id": "natural-language-processing-resource",
+    "title": "Resource: NLP Techniques Reference",
+    "item_type": "resource",
+    "description": "A reference guide summarizing key NLP techniques and algorithms.",
+    "level": "Intermediate",
+    "tags": [
+      "NLP",
+      "Machine Learning",
+      "Text Processing"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Node.js Backend Development": {
+    "course_id": "node-js-backend-development",
+    "title": "Node.js Backend Development",
+    "item_type": "course",
+    "description": "This course covers backend development using Node.js, focusing on building RESTful APIs and server-side applications. It's ideal for those looking to enhance their JavaScript skills.",
+    "level": "Intermediate",
+    "tags": [
+      "Node.js",
+      "Backend",
+      "API"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": [
+      "JavaScript Fundamentals"
+    ]
+  },
+  "Project: RESTful API Development": {
+    "course_id": "node-js-backend-development-project",
+    "title": "Project: RESTful API Development",
+    "item_type": "project",
+    "description": "Build a RESTful API using Node.js to serve data to a frontend application.",
+    "level": "Intermediate",
+    "tags": [
+      "Node.js",
+      "Backend",
+      "API"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Node.js Backend Development"
+    ]
+  },
+  "Resource: Node.js Development Guide": {
+    "course_id": "node-js-backend-development-resource",
+    "title": "Resource: Node.js Development Guide",
+    "item_type": "resource",
+    "description": "A guide outlining best practices and tools for Node.js development.",
+    "level": "Intermediate",
+    "tags": [
+      "Node.js",
+      "Backend",
+      "API"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "PostgreSQL Database Design": {
+    "course_id": "postgresql-database-design",
+    "title": "PostgreSQL Database Design",
+    "item_type": "course",
+    "description": "This course teaches the principles of database design using PostgreSQL, covering normalization, indexing, and query optimization. It's essential for database developers.",
+    "level": "Intermediate",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Design"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Database Schema Design": {
+    "course_id": "postgresql-database-design-project",
+    "title": "Project: Database Schema Design",
+    "item_type": "project",
+    "description": "Design a database schema for a sample application using PostgreSQL.",
+    "level": "Intermediate",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Design"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "PostgreSQL Database Design"
+    ]
+  },
+  "Resource: PostgreSQL Documentation": {
+    "course_id": "postgresql-database-design-resource",
+    "title": "Resource: PostgreSQL Documentation",
+    "item_type": "resource",
+    "description": "Official documentation providing comprehensive information on PostgreSQL features and usage.",
+    "level": "Intermediate",
+    "tags": [
+      "PostgreSQL",
+      "Database",
+      "Design"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Power BI Dashboard Creation": {
+    "course_id": "power-bi-dashboard-creation",
+    "title": "Power BI Dashboard Creation",
+    "item_type": "course",
+    "description": "This course teaches how to create interactive dashboards using Power BI, focusing on data visualization and reporting. Learners will gain skills in data analysis and presentation.",
+    "level": "Intermediate",
+    "tags": [
+      "Power BI",
+      "Data Visualization",
+      "Reporting"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Interactive Business Dashboard": {
+    "course_id": "power-bi-dashboard-creation-project",
+    "title": "Project: Interactive Business Dashboard",
+    "item_type": "project",
+    "description": "Create an interactive business dashboard that visualizes key performance indicators.",
+    "level": "Intermediate",
+    "tags": [
+      "Power BI",
+      "Data Visualization",
+      "Reporting"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Power BI Dashboard Creation"
+    ]
+  },
+  "Resource: Power BI Resources Guide": {
+    "course_id": "power-bi-dashboard-creation-resource",
+    "title": "Resource: Power BI Resources Guide",
+    "item_type": "resource",
+    "description": "A guide outlining resources and best practices for Power BI dashboard creation.",
+    "level": "Intermediate",
+    "tags": [
+      "Power BI",
+      "Data Visualization",
+      "Reporting"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Probability and Statistics": {
+    "course_id": "probability-and-statistics",
+    "title": "Probability and Statistics",
+    "item_type": "course",
+    "description": "This course provides an introduction to probability and statistics, covering basic concepts and techniques for data analysis. It's suitable for beginners in the field.",
+    "level": "Beginner",
+    "tags": [
+      "Probability",
+      "Statistics",
+      "Data Analysis"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Resource: Probability & Statistics Reference": {
+    "course_id": "probability-and-statistics-resource",
+    "title": "Resource: Probability & Statistics Reference",
+    "item_type": "resource",
+    "description": "A reference document summarizing key probability and statistics concepts.",
+    "level": "Beginner",
+    "tags": [
+      "Probability",
+      "Statistics",
+      "Data Analysis"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Python Automation and Scripting": {
+    "course_id": "python-automation-and-scripting",
+    "title": "Python Automation and Scripting",
+    "item_type": "course",
+    "description": "This course teaches how to automate tasks and write scripts using Python. Learners will explore libraries and tools that simplify automation processes.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Automation",
+      "Scripting"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Task Automation Script": {
+    "course_id": "python-automation-and-scripting-project",
+    "title": "Project: Task Automation Script",
+    "item_type": "project",
+    "description": "Create a Python script that automates a repetitive task on your computer.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Automation",
+      "Scripting"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Python Automation and Scripting"
+    ]
+  },
+  "Resource: Python Automation Guide": {
+    "course_id": "python-automation-and-scripting-resource",
+    "title": "Resource: Python Automation Guide",
+    "item_type": "resource",
+    "description": "A guide outlining best practices and libraries for Python automation.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Automation",
+      "Scripting"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Python OOP Concepts": {
+    "course_id": "python-oop-concepts",
+    "title": "Python OOP Concepts",
+    "item_type": "course",
+    "description": "This course covers the principles of object-oriented programming (OOP) in Python, including classes, inheritance, and polymorphism. It's designed for those looking to deepen their programming skills.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "OOP",
+      "Programming"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "Java Programming Basics"
+    ]
+  },
+  "Project: OOP Project in Python": {
+    "course_id": "python-oop-concepts-project",
+    "title": "Project: OOP Project in Python",
+    "item_type": "project",
+    "description": "Develop a project using OOP principles in Python to demonstrate your understanding.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "OOP",
+      "Programming"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Python OOP Concepts"
+    ]
+  },
+  "Resource: OOP Concepts Reference": {
+    "course_id": "python-oop-concepts-resource",
+    "title": "Resource: OOP Concepts Reference",
+    "item_type": "resource",
+    "description": "A reference document summarizing key OOP concepts and principles in Python.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "OOP",
+      "Programming"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Python Programming Masterclass": {
+    "course_id": "python-programming-masterclass",
+    "title": "Python Programming Masterclass",
+    "item_type": "course",
+    "description": "This course covers advanced Python programming concepts and techniques, enabling learners to build complex applications. It includes topics like object-oriented programming, decorators, and context managers.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Programming",
+      "Advanced",
+      "OOP",
+      "Applications"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Python for Absolute Beginners"
+    ]
+  },
+  "Project: Build a Multi-User Chat Application": {
+    "course_id": "python-programming-masterclass-project",
+    "title": "Project: Build a Multi-User Chat Application",
+    "item_type": "project",
+    "description": "Create a real-time chat application using Python and WebSocket.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Programming",
+      "Advanced",
+      "OOP",
+      "Applications"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Python Programming Masterclass"
+    ]
+  },
+  "Resource: Python Advanced Cheat Sheet": {
+    "course_id": "python-programming-masterclass-resource",
+    "title": "Resource: Python Advanced Cheat Sheet",
+    "item_type": "resource",
+    "description": "A concise reference guide covering advanced Python syntax and features.",
+    "level": "Advanced",
+    "tags": [
+      "Python",
+      "Programming",
+      "Advanced",
+      "OOP",
+      "Applications"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Python for Absolute Beginners": {
+    "course_id": "python-for-absolute-beginners",
+    "title": "Python for Absolute Beginners",
+    "item_type": "course",
+    "description": "This course introduces the fundamentals of Python programming, perfect for those with no prior coding experience. Learners will grasp basic syntax, data types, and control structures.",
+    "level": "Beginner",
+    "tags": [
+      "Python",
+      "Beginners",
+      "Programming",
+      "Syntax",
+      "Basics"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Simple Calculator": {
+    "course_id": "python-for-absolute-beginners-project",
+    "title": "Project: Simple Calculator",
+    "item_type": "project",
+    "description": "Develop a basic calculator that performs addition, subtraction, multiplication, and division.",
+    "level": "Beginner",
+    "tags": [
+      "Python",
+      "Beginners",
+      "Programming",
+      "Syntax",
+      "Basics"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Python for Absolute Beginners"
+    ]
+  },
+  "Resource: Python Basics Reference": {
+    "course_id": "python-for-absolute-beginners-resource",
+    "title": "Resource: Python Basics Reference",
+    "item_type": "resource",
+    "description": "A handy document summarizing Python's basic syntax and commands.",
+    "level": "Beginner",
+    "tags": [
+      "Python",
+      "Beginners",
+      "Programming",
+      "Syntax",
+      "Basics"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Python for Data Science": {
+    "course_id": "python-for-data-science",
+    "title": "Python for Data Science",
+    "item_type": "course",
+    "description": "This course focuses on using Python for data analysis and visualization, covering libraries like Pandas, NumPy, and Matplotlib. Learners will gain skills to manipulate and visualize data effectively.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Data Science",
+      "Pandas",
+      "Visualization",
+      "Analysis"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": [
+      "Python for Absolute Beginners"
+    ]
+  },
+  "Resource: Data Science Toolkit": {
+    "course_id": "python-for-data-science-resource",
+    "title": "Resource: Data Science Toolkit",
+    "item_type": "resource",
+    "description": "A collection of resources and libraries for data analysis in Python.",
+    "level": "Intermediate",
+    "tags": [
+      "Python",
+      "Data Science",
+      "Pandas",
+      "Visualization",
+      "Analysis"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "REST API Design Principles": {
+    "course_id": "rest-api-design-principles",
+    "title": "REST API Design Principles",
+    "item_type": "course",
+    "description": "This course teaches the principles of designing RESTful APIs, including best practices for resource representation and HTTP methods. Learners will understand how to create scalable and maintainable APIs.",
+    "level": "Intermediate",
+    "tags": [
+      "API",
+      "REST",
+      "Design",
+      "Web",
+      "Development"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Create a RESTful API": {
+    "course_id": "rest-api-design-principles-project",
+    "title": "Project: Create a RESTful API",
+    "item_type": "project",
+    "description": "Build a RESTful API for a simple application using best design practices.",
+    "level": "Intermediate",
+    "tags": [
+      "API",
+      "REST",
+      "Design",
+      "Web",
+      "Development"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "REST API Design Principles"
+    ]
+  },
+  "Resource: REST API Design Guidelines": {
+    "course_id": "rest-api-design-principles-resource",
+    "title": "Resource: REST API Design Guidelines",
+    "item_type": "resource",
+    "description": "A document outlining key principles and best practices for designing REST APIs.",
+    "level": "Intermediate",
+    "tags": [
+      "API",
+      "REST",
+      "Design",
+      "Web",
+      "Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "React Native Mobile Development": {
+    "course_id": "react-native-mobile-development",
+    "title": "React Native Mobile Development",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of building mobile applications using React Native, including components, navigation, and state management. Learners will create cross-platform apps for iOS and Android.",
+    "level": "Intermediate",
+    "tags": [
+      "React Native",
+      "Mobile",
+      "Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "React.js Development"
+    ]
+  },
+  "Project: Mobile To-Do List App": {
+    "course_id": "react-native-mobile-development-project",
+    "title": "Project: Mobile To-Do List App",
+    "item_type": "project",
+    "description": "Develop a cross-platform to-do list application using React Native.",
+    "level": "Intermediate",
+    "tags": [
+      "React Native",
+      "Mobile",
+      "Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "React Native Mobile Development"
+    ]
+  },
+  "Resource: React Native Documentation": {
+    "course_id": "react-native-mobile-development-resource",
+    "title": "Resource: React Native Documentation",
+    "item_type": "resource",
+    "description": "Official documentation providing comprehensive guides and API references for React Native.",
+    "level": "Intermediate",
+    "tags": [
+      "React Native",
+      "Mobile",
+      "Development",
+      "Cross-Platform",
+      "Apps"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "React.js Development": {
+    "course_id": "react-js-development",
+    "title": "React.js Development",
+    "item_type": "course",
+    "description": "This course introduces learners to React.js, covering components, state management, and lifecycle methods. It's designed for those looking to build dynamic web applications.",
+    "level": "Intermediate",
+    "tags": [
+      "React",
+      "Web",
+      "Development",
+      "JavaScript",
+      "Components"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Single Page Application": {
+    "course_id": "react-js-development-project",
+    "title": "Project: Single Page Application",
+    "item_type": "project",
+    "description": "Create a dynamic single-page application using React.js.",
+    "level": "Intermediate",
+    "tags": [
+      "React",
+      "Web",
+      "Development",
+      "JavaScript",
+      "Components"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "React.js Development"
+    ]
+  },
+  "Resource: React.js Quick Start Guide": {
+    "course_id": "react-js-development-resource",
+    "title": "Resource: React.js Quick Start Guide",
+    "item_type": "resource",
+    "description": "A quick reference guide to get started with React.js development.",
+    "level": "Intermediate",
+    "tags": [
+      "React",
+      "Web",
+      "Development",
+      "JavaScript",
+      "Components"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Redis Caching Strategies": {
+    "course_id": "redis-caching-strategies",
+    "title": "Redis Caching Strategies",
+    "item_type": "course",
+    "description": "This course explores caching strategies using Redis, focusing on performance optimization and data retrieval techniques. Learners will understand how to implement caching in web applications.",
+    "level": "Advanced",
+    "tags": [
+      "Redis",
+      "Caching",
+      "Performance",
+      "Web",
+      "Optimization"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Implement Redis Caching": {
+    "course_id": "redis-caching-strategies-project",
+    "title": "Project: Implement Redis Caching",
+    "item_type": "project",
+    "description": "Set up Redis caching for a web application to improve performance.",
+    "level": "Advanced",
+    "tags": [
+      "Redis",
+      "Caching",
+      "Performance",
+      "Web",
+      "Optimization"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Redis Caching Strategies"
+    ]
+  },
+  "Resource: Redis Caching Best Practices": {
+    "course_id": "redis-caching-strategies-resource",
+    "title": "Resource: Redis Caching Best Practices",
+    "item_type": "resource",
+    "description": "A guide detailing best practices for implementing caching strategies with Redis.",
+    "level": "Advanced",
+    "tags": [
+      "Redis",
+      "Caching",
+      "Performance",
+      "Web",
+      "Optimization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Reinforcement Learning Basics": {
+    "course_id": "reinforcement-learning-basics",
+    "title": "Reinforcement Learning Basics",
+    "item_type": "course",
+    "description": "This course introduces the fundamentals of reinforcement learning, covering key concepts like agents, environments, and rewards. Learners will gain insights into how machines can learn from interactions.",
+    "level": "Intermediate",
+    "tags": [
+      "Reinforcement Learning",
+      "AI",
+      "Machine Learning",
+      "Basics",
+      "Algorithms"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Build a Simple Reinforcement Learning Agent": {
+    "course_id": "reinforcement-learning-basics-project",
+    "title": "Project: Build a Simple Reinforcement Learning Agent",
+    "item_type": "project",
+    "description": "Create a basic reinforcement learning agent that learns to navigate a simple environment.",
+    "level": "Intermediate",
+    "tags": [
+      "Reinforcement Learning",
+      "AI",
+      "Machine Learning",
+      "Basics",
+      "Algorithms"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Reinforcement Learning Basics"
+    ]
+  },
+  "Resource: Reinforcement Learning Primer": {
+    "course_id": "reinforcement-learning-basics-resource",
+    "title": "Resource: Reinforcement Learning Primer",
+    "item_type": "resource",
+    "description": "An introductory document explaining key concepts and terminology in reinforcement learning.",
+    "level": "Intermediate",
+    "tags": [
+      "Reinforcement Learning",
+      "AI",
+      "Machine Learning",
+      "Basics",
+      "Algorithms"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Responsive Web Design": {
+    "course_id": "responsive-web-design",
+    "title": "Responsive Web Design",
+    "item_type": "course",
+    "description": "This course teaches the principles of responsive web design, focusing on creating web pages that adapt to different screen sizes and devices. Learners will explore CSS techniques and frameworks.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Design",
+      "Responsive",
+      "CSS",
+      "HTML",
+      "Development"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": []
+  },
+  "Project: Responsive Website Project": {
+    "course_id": "responsive-web-design-project",
+    "title": "Project: Responsive Website Project",
+    "item_type": "project",
+    "description": "Design and develop a responsive website that works on various devices.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Design",
+      "Responsive",
+      "CSS",
+      "HTML",
+      "Development"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "Responsive Web Design"
+    ]
+  },
+  "Resource: Responsive Design Checklist": {
+    "course_id": "responsive-web-design-resource",
+    "title": "Resource: Responsive Design Checklist",
+    "item_type": "resource",
+    "description": "A checklist to ensure your web designs are responsive and user-friendly.",
+    "level": "Intermediate",
+    "tags": [
+      "Web Design",
+      "Responsive",
+      "CSS",
+      "HTML",
+      "Development"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "SQL for Beginners": {
+    "course_id": "sql-for-beginners",
+    "title": "SQL for Beginners",
+    "item_type": "course",
+    "description": "This course introduces the basics of SQL, covering fundamental queries, data manipulation, and database design. Learners will gain the skills to interact with databases effectively.",
+    "level": "Beginner",
+    "tags": [
+      "SQL",
+      "Databases",
+      "Beginners",
+      "Queries",
+      "Data"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Database Query Project": {
+    "course_id": "sql-for-beginners-project",
+    "title": "Project: Database Query Project",
+    "item_type": "project",
+    "description": "Write SQL queries to retrieve and manipulate data in a sample database.",
+    "level": "Beginner",
+    "tags": [
+      "SQL",
+      "Databases",
+      "Beginners",
+      "Queries",
+      "Data"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "SQL for Beginners"
+    ]
+  },
+  "Resource: SQL Basics Reference": {
+    "course_id": "sql-for-beginners-resource",
+    "title": "Resource: SQL Basics Reference",
+    "item_type": "resource",
+    "description": "A reference guide summarizing basic SQL commands and syntax.",
+    "level": "Beginner",
+    "tags": [
+      "SQL",
+      "Databases",
+      "Beginners",
+      "Queries",
+      "Data"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Smart Contract Programming with Solidity": {
+    "course_id": "smart-contract-programming-with-solidity",
+    "title": "Smart Contract Programming with Solidity",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of programming smart contracts using Solidity, focusing on blockchain technology and decentralized applications. Learners will understand how to write and deploy smart contracts.",
+    "level": "Intermediate",
+    "tags": [
+      "Solidity",
+      "Blockchain",
+      "Smart Contracts",
+      "Development",
+      "DApps"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": []
+  },
+  "Project: Deploy a Smart Contract": {
+    "course_id": "smart-contract-programming-with-solidity-project",
+    "title": "Project: Deploy a Smart Contract",
+    "item_type": "project",
+    "description": "Create and deploy a simple smart contract on a blockchain network.",
+    "level": "Intermediate",
+    "tags": [
+      "Solidity",
+      "Blockchain",
+      "Smart Contracts",
+      "Development",
+      "DApps"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Smart Contract Programming with Solidity"
+    ]
+  },
+  "Resource: Solidity Documentation": {
+    "course_id": "smart-contract-programming-with-solidity-resource",
+    "title": "Resource: Solidity Documentation",
+    "item_type": "resource",
+    "description": "Official documentation providing comprehensive guides and references for Solidity programming.",
+    "level": "Intermediate",
+    "tags": [
+      "Solidity",
+      "Blockchain",
+      "Smart Contracts",
+      "Development",
+      "DApps"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Statistical Analysis with R": {
+    "course_id": "statistical-analysis-with-r",
+    "title": "Statistical Analysis with R",
+    "item_type": "course",
+    "description": "This course teaches statistical analysis techniques using R, covering data manipulation, visualization, and hypothesis testing. Learners will apply statistical methods to real-world datasets.",
+    "level": "Intermediate",
+    "tags": [
+      "R",
+      "Statistics",
+      "Analysis",
+      "Data",
+      "Visualization"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Statistical Analysis Project": {
+    "course_id": "statistical-analysis-with-r-project",
+    "title": "Project: Statistical Analysis Project",
+    "item_type": "project",
+    "description": "Analyze a dataset using statistical methods and present your findings.",
+    "level": "Intermediate",
+    "tags": [
+      "R",
+      "Statistics",
+      "Analysis",
+      "Data",
+      "Visualization"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Statistical Analysis with R"
+    ]
+  },
+  "Resource: R Statistical Analysis Guide": {
+    "course_id": "statistical-analysis-with-r-resource",
+    "title": "Resource: R Statistical Analysis Guide",
+    "item_type": "resource",
+    "description": "A guide detailing statistical analysis techniques and functions in R.",
+    "level": "Intermediate",
+    "tags": [
+      "R",
+      "Statistics",
+      "Analysis",
+      "Data",
+      "Visualization"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Supervised Learning Algorithms": {
+    "course_id": "supervised-learning-algorithms",
+    "title": "Supervised Learning Algorithms",
+    "item_type": "course",
+    "description": "This course covers supervised learning algorithms in machine learning, including regression, classification, and model evaluation techniques. Learners will implement algorithms using Python.",
+    "level": "Advanced",
+    "tags": [
+      "Machine Learning",
+      "Supervised Learning",
+      "Algorithms",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Python for Data Science"
+    ]
+  },
+  "Project: Build a Supervised Learning Model": {
+    "course_id": "supervised-learning-algorithms-project",
+    "title": "Project: Build a Supervised Learning Model",
+    "item_type": "project",
+    "description": "Create a supervised learning model to predict outcomes based on a dataset.",
+    "level": "Advanced",
+    "tags": [
+      "Machine Learning",
+      "Supervised Learning",
+      "Algorithms",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Supervised Learning Algorithms"
+    ]
+  },
+  "Resource: Supervised Learning Techniques": {
+    "course_id": "supervised-learning-algorithms-resource",
+    "title": "Resource: Supervised Learning Techniques",
+    "item_type": "resource",
+    "description": "A document outlining various supervised learning algorithms and their applications.",
+    "level": "Advanced",
+    "tags": [
+      "Machine Learning",
+      "Supervised Learning",
+      "Algorithms",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Tableau for Business Analytics": {
+    "course_id": "tableau-for-business-analytics",
+    "title": "Tableau for Business Analytics",
+    "item_type": "course",
+    "description": "This course teaches how to use Tableau for data visualization and business analytics, covering dashboard creation and data storytelling. Learners will gain skills to present data insights effectively.",
+    "level": "Intermediate",
+    "tags": [
+      "Tableau",
+      "Data Visualization",
+      "Business",
+      "Analytics",
+      "Dashboards"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Create a Business Dashboard": {
+    "course_id": "tableau-for-business-analytics-project",
+    "title": "Project: Create a Business Dashboard",
+    "item_type": "project",
+    "description": "Develop a business dashboard using Tableau to visualize key metrics.",
+    "level": "Intermediate",
+    "tags": [
+      "Tableau",
+      "Data Visualization",
+      "Business",
+      "Analytics",
+      "Dashboards"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Tableau for Business Analytics"
+    ]
+  },
+  "Resource: Tableau Quick Start Guide": {
+    "course_id": "tableau-for-business-analytics-resource",
+    "title": "Resource: Tableau Quick Start Guide",
+    "item_type": "resource",
+    "description": "A guide to help beginners get started with Tableau for data visualization.",
+    "level": "Intermediate",
+    "tags": [
+      "Tableau",
+      "Data Visualization",
+      "Business",
+      "Analytics",
+      "Dashboards"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Time Series Analysis": {
+    "course_id": "time-series-analysis",
+    "title": "Time Series Analysis",
+    "item_type": "course",
+    "description": "This course covers techniques for analyzing time series data, including trend analysis, seasonal decomposition, and forecasting methods. Learners will apply these techniques using R or Python.",
+    "level": "Advanced",
+    "tags": [
+      "Time Series",
+      "Analysis",
+      "Forecasting",
+      "Data",
+      "R"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Statistical Analysis with R"
+    ]
+  },
+  "Project: Time Series Forecasting Project": {
+    "course_id": "time-series-analysis-project",
+    "title": "Project: Time Series Forecasting Project",
+    "item_type": "project",
+    "description": "Analyze and forecast a time series dataset using appropriate techniques.",
+    "level": "Advanced",
+    "tags": [
+      "Time Series",
+      "Analysis",
+      "Forecasting",
+      "Data",
+      "R"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Time Series Analysis"
+    ]
+  },
+  "Resource: Time Series Analysis Reference": {
+    "course_id": "time-series-analysis-resource",
+    "title": "Resource: Time Series Analysis Reference",
+    "item_type": "resource",
+    "description": "A reference guide covering key concepts and methods in time series analysis.",
+    "level": "Advanced",
+    "tags": [
+      "Time Series",
+      "Analysis",
+      "Forecasting",
+      "Data",
+      "R"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Transfer Learning and Fine-tuning": {
+    "course_id": "transfer-learning-and-fine-tuning",
+    "title": "Transfer Learning and Fine-tuning",
+    "item_type": "course",
+    "description": "This course explores transfer learning techniques in machine learning, focusing on how to fine-tune pre-trained models for specific tasks. Learners will apply these techniques using popular frameworks.",
+    "level": "Advanced",
+    "tags": [
+      "Transfer Learning",
+      "Machine Learning",
+      "Fine-tuning",
+      "Models",
+      "AI"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": [
+      "Supervised Learning Algorithms"
+    ]
+  },
+  "Project: Fine-tune a Pre-trained Model": {
+    "course_id": "transfer-learning-and-fine-tuning-project",
+    "title": "Project: Fine-tune a Pre-trained Model",
+    "item_type": "project",
+    "description": "Apply transfer learning to fine-tune a pre-trained model for a specific classification task.",
+    "level": "Advanced",
+    "tags": [
+      "Transfer Learning",
+      "Machine Learning",
+      "Fine-tuning",
+      "Models",
+      "AI"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "Transfer Learning and Fine-tuning"
+    ]
+  },
+  "Resource: Transfer Learning Guide": {
+    "course_id": "transfer-learning-and-fine-tuning-resource",
+    "title": "Resource: Transfer Learning Guide",
+    "item_type": "resource",
+    "description": "A document outlining transfer learning concepts and techniques.",
+    "level": "Advanced",
+    "tags": [
+      "Transfer Learning",
+      "Machine Learning",
+      "Fine-tuning",
+      "Models",
+      "AI"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "TypeScript for Developers": {
+    "course_id": "typescript-for-developers",
+    "title": "TypeScript for Developers",
+    "item_type": "course",
+    "description": "This course introduces TypeScript, a typed superset of JavaScript, focusing on its features and benefits for large-scale applications. Learners will understand how to integrate TypeScript into their projects.",
+    "level": "Intermediate",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "Development",
+      "Applications",
+      "Programming"
+    ],
+    "estimated_hours": 20,
+    "prerequisites": [
+      "React.js Development"
+    ]
+  },
+  "Project: TypeScript Application": {
+    "course_id": "typescript-for-developers-project",
+    "title": "Project: TypeScript Application",
+    "item_type": "project",
+    "description": "Build a web application using TypeScript and React.js.",
+    "level": "Intermediate",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "Development",
+      "Applications",
+      "Programming"
+    ],
+    "estimated_hours": 10,
+    "prerequisites": [
+      "TypeScript for Developers"
+    ]
+  },
+  "Resource: TypeScript Handbook": {
+    "course_id": "typescript-for-developers-resource",
+    "title": "Resource: TypeScript Handbook",
+    "item_type": "resource",
+    "description": "Official handbook providing comprehensive information on TypeScript features and usage.",
+    "level": "Intermediate",
+    "tags": [
+      "TypeScript",
+      "JavaScript",
+      "Development",
+      "Applications",
+      "Programming"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Unsupervised Learning Techniques": {
+    "course_id": "unsupervised-learning-techniques",
+    "title": "Unsupervised Learning Techniques",
+    "item_type": "course",
+    "description": "This course covers unsupervised learning techniques in machine learning, including clustering and dimensionality reduction. Learners will implement these techniques using Python.",
+    "level": "Intermediate",
+    "tags": [
+      "Unsupervised Learning",
+      "Machine Learning",
+      "Clustering",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 25,
+    "prerequisites": []
+  },
+  "Project: Clustering Analysis Project": {
+    "course_id": "unsupervised-learning-techniques-project",
+    "title": "Project: Clustering Analysis Project",
+    "item_type": "project",
+    "description": "Perform clustering analysis on a dataset using unsupervised learning techniques.",
+    "level": "Intermediate",
+    "tags": [
+      "Unsupervised Learning",
+      "Machine Learning",
+      "Clustering",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 12,
+    "prerequisites": [
+      "Unsupervised Learning Techniques"
+    ]
+  },
+  "Resource: Unsupervised Learning Overview": {
+    "course_id": "unsupervised-learning-techniques-resource",
+    "title": "Resource: Unsupervised Learning Overview",
+    "item_type": "resource",
+    "description": "A document summarizing key concepts and techniques in unsupervised learning.",
+    "level": "Intermediate",
+    "tags": [
+      "Unsupervised Learning",
+      "Machine Learning",
+      "Clustering",
+      "Python",
+      "Data"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "Vue.js for Beginners": {
+    "course_id": "vue-js-for-beginners",
+    "title": "Vue.js for Beginners",
+    "item_type": "course",
+    "description": "This course introduces the basics of Vue.js, a progressive JavaScript framework, focusing on building user interfaces. Learners will understand components, directives, and state management.",
+    "level": "Beginner",
+    "tags": [
+      "Vue.js",
+      "JavaScript",
+      "Framework",
+      "Beginners",
+      "UI"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": []
+  },
+  "Project: Simple Vue.js Application": {
+    "course_id": "vue-js-for-beginners-project",
+    "title": "Project: Simple Vue.js Application",
+    "item_type": "project",
+    "description": "Create a basic user interface application using Vue.js.",
+    "level": "Beginner",
+    "tags": [
+      "Vue.js",
+      "JavaScript",
+      "Framework",
+      "Beginners",
+      "UI"
+    ],
+    "estimated_hours": 7,
+    "prerequisites": [
+      "Vue.js for Beginners"
+    ]
+  },
+  "Resource: Vue.js Quick Start Guide": {
+    "course_id": "vue-js-for-beginners-resource",
+    "title": "Resource: Vue.js Quick Start Guide",
+    "item_type": "resource",
+    "description": "A guide to help beginners get started with Vue.js development.",
+    "level": "Beginner",
+    "tags": [
+      "Vue.js",
+      "JavaScript",
+      "Framework",
+      "Beginners",
+      "UI"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  },
+  "iOS App Development with Swift": {
+    "course_id": "ios-app-development-with-swift",
+    "title": "iOS App Development with Swift",
+    "item_type": "course",
+    "description": "This course covers the fundamentals of iOS app development using Swift, focusing on building user-friendly applications for iOS devices. Learners will explore UIKit and SwiftUI.",
+    "level": "Intermediate",
+    "tags": [
+      "iOS",
+      "Swift",
+      "App Development",
+      "Mobile",
+      "UIKit"
+    ],
+    "estimated_hours": 30,
+    "prerequisites": []
+  },
+  "Project: iOS To-Do List App": {
+    "course_id": "ios-app-development-with-swift-project",
+    "title": "Project: iOS To-Do List App",
+    "item_type": "project",
+    "description": "Develop a simple to-do list application for iOS using Swift.",
+    "level": "Intermediate",
+    "tags": [
+      "iOS",
+      "Swift",
+      "App Development",
+      "Mobile",
+      "UIKit"
+    ],
+    "estimated_hours": 15,
+    "prerequisites": [
+      "iOS App Development with Swift"
+    ]
+  },
+  "Resource: iOS Development Resources": {
+    "course_id": "ios-app-development-with-swift-resource",
+    "title": "Resource: iOS Development Resources",
+    "item_type": "resource",
+    "description": "A collection of resources for learning iOS app development with Swift.",
+    "level": "Intermediate",
+    "tags": [
+      "iOS",
+      "Swift",
+      "App Development",
+      "Mobile",
+      "UIKit"
+    ],
+    "estimated_hours": 2,
+    "prerequisites": []
+  }
+  }
