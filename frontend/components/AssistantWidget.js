@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
+import { usePathname } from "next/navigation";
 import { supabase } from "../lib/supabaseClient";
 import { api } from "../lib/api";
 
@@ -14,7 +15,10 @@ const EDGE = 24;
  *   step is completed (dashboard dispatches "pathwise:step-completed").
  * - Can trigger actions the backend requests (regenerate path).
  */
+const HIDDEN_ON = ["/login", "/"];
+
 export default function AssistantWidget() {
+  const pathname = usePathname();
   const [userId, setUserId] = useState(null);
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -30,9 +34,36 @@ export default function AssistantWidget() {
   const endRef = useRef(null);
 
   useEffect(() => {
+    let mounted = true;
+
+    function applyUser(nextId) {
+      if (!mounted) return;
+      setUserId((prev) => {
+        // Different account (or signed out) — wipe the previous person's
+        // conversation so nothing leaks between users.
+        if (prev !== nextId) {
+          setMessages([]);
+          setGreeted(false);
+          setUnread(0);
+          setContextCourseId(null);
+          setOpen(false);
+        }
+        return nextId;
+      });
+    }
+
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) setUserId(data.session.user.id);
+      applyUser(data.session ? data.session.user.id : null);
     });
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      applyUser(session ? session.user.id : null);
+    });
+
+    return () => {
+      mounted = false;
+      sub?.subscription?.unsubscribe();
+    };
   }, []);
 
   useEffect(() => {
@@ -158,6 +189,10 @@ export default function AssistantWidget() {
       const res = await api.assistant(userId, msg, contextCourseId);
       setMessages((m) => [...m, { role: "assistant", content: res.reply }]);
 
+      // The assistant may have updated the learner profile (goal, level,
+      // known topics) — tell the dashboard to re-read it either way.
+      window.dispatchEvent(new CustomEvent("pathwise:path-changed"));
+
       if (res.action === "regenerate_path") {
         setMessages((m) => [...m, { role: "assistant", content: "Rebuilding your path now…" }]);
         try {
@@ -177,7 +212,7 @@ export default function AssistantWidget() {
     setSending(false);
   }
 
-  if (!userId) return null;
+  if (!userId || HIDDEN_ON.includes(pathname)) return null;
 
   const quickActions = ["What should I do next?", "How am I doing?", "Rebuild my path"];
 
@@ -257,4 +292,4 @@ export default function AssistantWidget() {
       </button>
     </>
   );
-                              }
+                           }
