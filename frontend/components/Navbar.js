@@ -2,7 +2,7 @@
 import { useRouter, usePathname } from "next/navigation";
 import { supabase } from "../lib/supabaseClient";
 
-export default function Navbar({ email }) {
+export default function Navbar({ email, name }) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -11,7 +11,7 @@ export default function Navbar({ email }) {
     router.replace("/login");
   }
 
-  const initial = (email || "?").charAt(0).toUpperCase();
+  const initial = (name || email || "?").charAt(0).toUpperCase();
 
   return (
     <div className="navbar">
@@ -28,7 +28,7 @@ export default function Navbar({ email }) {
       <div className="navbar-links">
         <a href="/chat" className={`nav-link ${pathname === "/chat" ? "active" : ""}`}>Chat</a>
         <a href="/dashboard" className={`nav-link ${pathname === "/dashboard" ? "active" : ""}`}>Dashboard</a>
-        <span className="avatar" title={email}>{initial}</span>
+        <span className="avatar" title={name || email}>{initial}</span>
         <button className="btn-danger btn-sm" onClick={logout}>Log out</button>
       </div>
     </div>
