@@ -85,12 +85,12 @@ how it moves them toward their goal. You are explaining a plan that already
 exists — do NOT argue the item shouldn't be recommended, and do not suggest
 replacing it. If its difficulty looks like a stretch given their level,
 frame that as what to focus on or how to prepare, not as a reason to skip it.
-Keep it to 2-4 sentences, concrete and specific to their situation."""
+Keep it to 2-3 SHORT sentences. No long paragraphs."""
     else:
         context_block = "This item is NOT currently part of the learner's path."
         task = """Explain to the learner (address them as "you") how this item relates to
 their goal and what they've already completed, and whether it would fit
-their current plan. Keep it to 2-4 sentences, concrete and specific."""
+their current plan. Keep it to 2-3 SHORT sentences."""
 
     client = OpenAI(api_key=OPENAI_API_KEY)
     prompt = f"""Learner profile: {profile}
