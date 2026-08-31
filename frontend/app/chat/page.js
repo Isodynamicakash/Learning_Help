@@ -9,6 +9,7 @@ export default function Chat() {
   const router = useRouter();
   const [userId, setUserId] = useState(null);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [messages, setMessages] = useState([
     { role: "assistant", content: "Hi! Tell me what you're trying to learn or what goal you're working toward — I'll build a path around it." },
   ]);
@@ -24,6 +25,7 @@ export default function Chat() {
       else {
         setUserId(data.session.user.id);
         setEmail(data.session.user.email);
+        setName(data.session.user.user_metadata?.full_name || "");
       }
     });
   }, [router]);
@@ -53,7 +55,7 @@ export default function Chat() {
 
   return (
     <>
-      <Navbar email={email} />
+      <Navbar email={email} name={name} />
       <div className="container">
         <h1 className="page-title">Chat</h1>
 
