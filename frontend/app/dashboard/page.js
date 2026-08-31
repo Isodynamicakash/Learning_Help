@@ -345,6 +345,18 @@ export default function Dashboard() {
 
           {/* ---------- Main content ---------- */}
           <div>
+            {!profile?.goal && (
+              <div className="banner" style={{ marginBottom: 16 }}>
+                <span>No goal set yet — tell the assistant what you want to learn.</span>
+                <button
+                  className="btn-primary btn-sm"
+                  onClick={() => window.dispatchEvent(new CustomEvent("pathwise:open-assistant"))}
+                >
+                  Open assistant
+                </button>
+              </div>
+            )}
+
             {progress.items.length === 0 && (
               <div className="card empty-state">
                 <div className="big-emoji">
@@ -352,7 +364,7 @@ export default function Dashboard() {
                     <path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7" />
                   </svg>
                 </div>
-                <p>Chat about your goal first, then generate a path here.</p>
+                <p>Tell the assistant your goal, then generate a path here.</p>
               </div>
             )}
 
@@ -476,4 +488,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-            }
+}
