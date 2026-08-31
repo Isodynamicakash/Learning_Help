@@ -1,5 +1,6 @@
 import json
 import re
+from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException
 from openai import OpenAI
 from app.config import OPENAI_API_KEY, OPENAI_MODEL
@@ -117,6 +118,7 @@ def chat(payload: ChatMessageIn):
             else:
                 current[key] = value
 
+        current["updated_at"] = datetime.now(timezone.utc).isoformat()
         supabase.table("learner_profiles").upsert(current).execute()
         merged_profile = current
         profile_updated = True
