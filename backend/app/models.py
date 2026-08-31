@@ -73,3 +73,14 @@ class ProgressUpdateRequest(BaseModel):
     course_id: str
     status: str  # "in_progress" | "completed"
     feedback: Optional[str] = None  # "struggled" | "too_easy" | freeform note
+
+
+class AssistantRequest(BaseModel):
+    user_id: str
+    message: str
+    context_course_id: Optional[str] = None  # set when asking about a specific step
+
+
+class AssistantResponse(BaseModel):
+    reply: str
+    action: Optional[str] = None  # "regenerate_path" | None
