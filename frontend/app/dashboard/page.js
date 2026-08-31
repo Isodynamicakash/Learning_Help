@@ -5,7 +5,7 @@ import { supabase } from "../../lib/supabaseClient";
 import { api } from "../../lib/api";
 import Navbar from "../../components/Navbar";
 
-const TYPE_LABEL = { course: "📘 Course", project: "🛠 Project", resource: "📎 Resource" };
+const TYPE_LABEL = { course: "Course", project: "Project", resource: "Resource" };
 const STATUS_LABEL = { not_started: "Not started", in_progress: "In progress", completed: "Completed" };
 
 export default function Dashboard() {
@@ -95,11 +95,11 @@ export default function Dashboard() {
             <div className="profile-avatar">{initial}</div>
             <div style={{ flex: 1 }}>
               <p className="card-title" style={{ marginBottom: 2 }}>{email}</p>
-              {profile.goal && <p style={{ margin: "4px 0", fontSize: 14 }}>🎯 <strong>Goal:</strong> {profile.goal}</p>}
+              {profile.goal && <p style={{ margin: "4px 0", fontSize: 14 }}><strong>Goal:</strong> {profile.goal}</p>}
               <div style={{ marginTop: 8 }}>
                 {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
                 {(profile.interests || []).map((i) => <span className="tag" key={i}>{i}</span>)}
-                {(profile.known_topics || []).map((k) => <span className="tag" key={k}>✓ {k}</span>)}
+                {(profile.known_topics || []).map((k) => <span className="tag" key={k}>{k}</span>)}
               </div>
             </div>
           </div>
@@ -152,18 +152,22 @@ export default function Dashboard() {
         <div style={{ marginTop: 20 }}>
           {progress.items.length === 0 && (
             <div className="empty-state">
-              <div className="big-emoji">🗺️</div>
+              <div className="big-emoji">
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--text-dim)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ opacity: 0.5 }}>
+                  <path d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-.553-.894L15 4m0 13V4m0 0L9 7" />
+                </svg>
+              </div>
               <p>No path yet — generate one above once you've chatted about your goal.</p>
             </div>
           )}
           {progress.items.map((s) => (
             <div className={`card step-card type-${s.item_type || "course"}`} key={s.course_id}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-                <strong style={{ fontSize: 15 }}>{s.order}. {TYPE_LABEL[s.item_type] || "📘 Course"} {s.title}</strong>
+                <strong style={{ fontSize: 14.5 }}>{s.order}. <span style={{ color: "var(--text-dim)", fontWeight: 500, fontSize: 12.5, textTransform: "uppercase", letterSpacing: "0.03em" }}>{TYPE_LABEL[s.item_type] || "Course"}</span> · {s.title}</strong>
                 <span className={`pill pill-${s.status || "not_started"}`}>{STATUS_LABEL[s.status] || s.status}</span>
               </div>
               {s.reason && <p style={{ opacity: 0.85, fontSize: 14, marginTop: 8 }}>{s.reason}</p>}
-              {s.milestone && <p style={{ fontSize: 13, marginTop: 4 }}>🎯 {s.milestone}</p>}
+              {s.milestone && <p style={{ fontSize: 13, marginTop: 4, color: "var(--text-dim)" }}>Milestone: {s.milestone}</p>}
               {s.feedback && <p style={{ fontSize: 12, opacity: 0.55, marginTop: 4 }}>Feedback given: {s.feedback}</p>}
               {explanations[s.course_id] && (
                 <div className="explain-box">{explanations[s.course_id]}</div>
@@ -196,4 +200,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-}
+            }
