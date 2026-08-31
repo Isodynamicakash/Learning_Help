@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabaseClient";
 import { api } from "../../lib/api";
 import Navbar from "../../components/Navbar";
-import AssistantWidget from "../../components/AssistantWidget";
 
 const TYPE_ORDER = ["course", "project", "resource"];
 const TYPE_SECTION_LABEL = { course: "Courses", project: "Projects", resource: "Resources" };
@@ -54,8 +53,6 @@ export default function Dashboard() {
   const [refreshing, setRefreshing] = useState(false);
   const [busy, setBusy] = useState(null); // { title, sub }
   const [celebration, setCelebration] = useState(null); // { title, sub }
-  const [assistantSignal, setAssistantSignal] = useState(0);
-  const [assistantSeed, setAssistantSeed] = useState(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -68,6 +65,14 @@ export default function Dashboard() {
       }
     });
   }, [router]);
+
+  useEffect(() => {
+    function onPathChanged() {
+      if (userId) refreshAll(userId);
+    }
+    window.addEventListener("pathwise:path-changed", onPathChanged);
+    return () => window.removeEventListener("pathwise:path-changed", onPathChanged);
+  }, [userId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (!celebration) return;
@@ -123,6 +128,11 @@ export default function Dashboard() {
       await refreshAll(userId);
       const remaining = Math.max(0, total - (before + 1));
       const goalText = profile?.goal ? `your ${profile.goal} goal` : "your goal";
+      window.dispatchEvent(
+        new CustomEvent("pathwise:step-completed", {
+          detail: { title, completed: before + 1, total, streak: progress.streak },
+        })
+      );
       setCelebration(
         remaining === 0
           ? { title: "Path complete!", sub: `You finished every step toward ${goalText}.` }
@@ -187,10 +197,13 @@ export default function Dashboard() {
           <button className="btn-secondary btn-sm" onClick={() => explainStep(s.course_id)}>Why this?</button>
           <button
             className="btn-secondary btn-sm"
-            onClick={() => {
-              setAssistantSeed({ courseId: s.course_id, title: s.title });
-              setAssistantSignal((n) => n + 1);
-            }}
+            onClick={() =>
+              window.dispatchEvent(
+                new CustomEvent("pathwise:open-assistant", {
+                  detail: { courseId: s.course_id, title: s.title },
+                })
+              )
+            }
           >
             Ask more
           </button>
@@ -431,13 +444,6 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
-
-      <AssistantWidget
-        userId={userId}
-        openSignal={assistantSignal}
-        seedContext={assistantSeed}
-        onPathChanged={() => refreshAll(userId)}
-      />
     </>
   );
-    }
+        }
