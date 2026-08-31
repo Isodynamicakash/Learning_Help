@@ -330,24 +330,6 @@ export default function Dashboard() {
                 </div>
               </div>
             )}
-
-            {skills.skills.length > 0 && (
-              <div className="card">
-                <p className="card-title">Skill development</p>
-                <p className="card-sub" style={{ marginBottom: 14 }}>{skills.completed_count} item(s) completed</p>
-                {skills.skills.slice(0, 8).map((s) => (
-                  <div className="skill-row" key={s.tag}>
-                    <div className="skill-row-top">
-                      <span>{s.tag}</span>
-                      <span style={{ opacity: 0.6 }}>{s.strength}</span>
-                    </div>
-                    <div className="progress-bar">
-                      <div className="progress-fill" style={{ width: `${Math.min(100, s.strength * 25)}%` }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
 
           {/* ---------- Main content ---------- */}
@@ -384,8 +366,62 @@ export default function Dashboard() {
               </div>
             ))}
           </div>
+
+          {/* ---------- Right sidebar ---------- */}
+          <div className="right-col">
+            {skills.skills.length > 0 && (
+              <div className="card">
+                <p className="card-title">Skill development</p>
+                <p className="card-sub" style={{ marginBottom: 14 }}>{skills.completed_count} item(s) completed</p>
+                {skills.skills.slice(0, 10).map((s) => (
+                  <div className="skill-row" key={s.tag}>
+                    <div className="skill-row-top">
+                      <span>{s.tag}</span>
+                      <span style={{ opacity: 0.6 }}>{s.strength}</span>
+                    </div>
+                    <div className="progress-bar">
+                      <div className="progress-fill" style={{ width: `${Math.min(100, s.strength * 25)}%` }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            <div className="card">
+              <p className="card-title">Path breakdown</p>
+              <p className="card-sub" style={{ marginBottom: 12 }}>What's in your current plan</p>
+              {TYPE_ORDER.map((t) => {
+                const list = grouped[t] || [];
+                const done = list.filter((i) => i.status === "completed").length;
+                if (!list.length) return null;
+                return (
+                  <div className="skill-row" key={t}>
+                    <div className="skill-row-top">
+                      <span>{TYPE_SECTION_LABEL[t]}</span>
+                      <span style={{ opacity: 0.6 }}>{done}/{list.length}</span>
+                    </div>
+                    <div className="progress-bar">
+                      <div className="progress-fill" style={{ width: `${list.length ? (done / list.length) * 100 : 0}%` }} />
+                    </div>
+                  </div>
+                );
+              })}
+              {progress.items.length === 0 && (
+                <p className="card-sub" style={{ margin: 0 }}>No path yet.</p>
+              )}
+            </div>
+
+            {skills.skills.length === 0 && progress.items.length > 0 && (
+              <div className="card">
+                <p className="card-title">Skill development</p>
+                <p className="card-sub" style={{ margin: 0 }}>
+                  Complete a step to start building your skill profile.
+                </p>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </>
   );
-            }
+          }
