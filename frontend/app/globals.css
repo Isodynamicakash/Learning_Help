@@ -357,3 +357,120 @@ a:hover { text-decoration: underline; }
 @media (max-width: 900px) {
   .chat-grid { grid-template-columns: 1fr; }
 }
+
+/* ---------- Blocking overlay (adapting / generating) ---------- */
+.busy-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(11, 13, 18, 0.6);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlay-in 0.18s ease;
+}
+@keyframes overlay-in { from { opacity: 0; } to { opacity: 1; } }
+
+.busy-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 34px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  min-width: 260px;
+}
+.busy-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 14px 0 4px;
+  animation: pulse-text 1.4s ease-in-out infinite;
+}
+@keyframes pulse-text { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+.busy-sub { font-size: 12.5px; color: var(--text-dim); margin: 0; }
+
+.spinner {
+  width: 30px; height: 30px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.busy-dots { display: flex; gap: 5px; justify-content: center; margin-top: 12px; }
+.busy-dots span {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+  animation: dot-bounce 1.2s ease-in-out infinite;
+}
+.busy-dots span:nth-child(2) { animation-delay: 0.15s; }
+.busy-dots span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes dot-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.4; }
+  50% { transform: translateY(-5px); opacity: 1; }
+}
+
+/* ---------- Celebration ---------- */
+.celebrate-toast {
+  position: fixed;
+  top: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 120;
+  background: var(--surface);
+  border: 1px solid var(--success);
+  border-radius: var(--radius);
+  padding: 14px 22px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  animation: toast-in 0.35s cubic-bezier(0.2, 1.2, 0.4, 1);
+}
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-16px) scale(0.94); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0) scale(1); }
+}
+.celebrate-title { font-size: 15px; font-weight: 700; margin: 0 0 3px; color: var(--success); }
+.celebrate-sub { font-size: 12.5px; color: var(--text-dim); margin: 0; }
+
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 110;
+  overflow: hidden;
+}
+.confetti-piece {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 13px;
+  opacity: 0;
+  animation: confetti-fall 2.4s linear forwards;
+}
+@keyframes confetti-fall {
+  0%   { opacity: 1; transform: translateY(0) rotate(0deg); }
+  100% { opacity: 0; transform: translateY(105vh) rotate(680deg); }
+}
+
+/* ---------- Goal + streak cards ---------- */
+.goal-card {
+  background: linear-gradient(135deg, rgba(91,127,219,0.16), rgba(63,178,127,0.10));
+  border: 1px solid rgba(91,127,219,0.3);
+}
+.goal-title { font-size: 15px; font-weight: 700; margin: 6px 0 10px; }
+.goal-meta { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--text-dim); margin-top: 7px; }
+
+.streak-card { display: flex; align-items: center; gap: 14px; }
+.streak-flame {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: var(--warning-soft);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.streak-num { font-size: 22px; font-weight: 800; margin: 0; line-height: 1.1; }
+.streak-label { font-size: 11.5px; color: var(--text-dim); margin: 0; }
