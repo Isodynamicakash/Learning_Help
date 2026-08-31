@@ -6,13 +6,27 @@ async function post(path, body) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
-  if (!res.ok) throw new Error(`${path} failed: ${res.status}`);
+  if (!res.ok) {
+    let detail = `${res.status}`;
+    try {
+      const errBody = await res.json();
+      detail = errBody.detail || detail;
+    } catch (e) {}
+    throw new Error(detail);
+  }
   return res.json();
 }
 
 async function get(path) {
   const res = await fetch(`${API_BASE}${path}`);
-  if (!res.ok) throw new Error(`${path} failed: ${res.status}`);
+  if (!res.ok) {
+    let detail = `${res.status}`;
+    try {
+      const errBody = await res.json();
+      detail = errBody.detail || detail;
+    } catch (e) {}
+    throw new Error(detail);
+  }
   return res.json();
 }
 
