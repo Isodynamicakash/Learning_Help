@@ -274,19 +274,19 @@ export default function Dashboard() {
             )}
 
             {/* ---- Goal card ---- */}
-            {profile?.goal && (
-              <div className="card goal-card">
-                <p className="card-sub" style={{ margin: 0 }}>Your goal</p>
-                <p className="goal-title">{profile.goal}</p>
-                <div className="progress-bar">
-                  <div className="progress-fill" style={{ width: `${pct}%` }} />
-                </div>
-                <div className="goal-meta">
-                  <span>{progress.completed} of {progress.total} steps</span>
-                  <span>{pct}%</span>
-                </div>
+            <div className="card goal-card">
+              <p className="card-sub" style={{ margin: 0 }}>Your goal</p>
+              <p className="goal-title">
+                {profile?.goal || "Not set yet — tell the assistant in chat"}
+              </p>
+              <div className="progress-bar">
+                <div className="progress-fill" style={{ width: `${pct}%` }} />
               </div>
-            )}
+              <div className="goal-meta">
+                <span>{progress.completed} of {progress.total} steps</span>
+                <span>{pct}%</span>
+              </div>
+            </div>
 
             {/* ---- Streak card ---- */}
             <div className="card streak-card">
@@ -304,32 +304,6 @@ export default function Dashboard() {
               </div>
             </div>
 
-            {nextUp && (
-              <div className="card">
-                <p className="card-title">Next up</p>
-                <p className="card-sub" style={{ marginBottom: 8 }}>Your next recommended action</p>
-                <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600 }}>
-                  {nextUp.order}. {nextUp.title}
-                </p>
-                {nextUp.milestone && (
-                  <p style={{ margin: "6px 0 0", fontSize: 12, color: "var(--text-dim)" }}>
-                    Milestone: {nextUp.milestone}
-                  </p>
-                )}
-              </div>
-            )}
-
-            {progress.skill_gaps && progress.skill_gaps.length > 0 && (
-              <div className="card">
-                <p className="card-title">Skill gaps</p>
-                <p className="card-sub" style={{ marginBottom: 10 }}>Not covered yet</p>
-                <div>
-                  {progress.skill_gaps.map((g) => (
-                    <span className="tag tag-gap" key={g}>{g}</span>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
 
           {/* ---------- Main content ---------- */}
@@ -369,6 +343,33 @@ export default function Dashboard() {
 
           {/* ---------- Right sidebar ---------- */}
           <div className="right-col">
+            {nextUp && (
+              <div className="card">
+                <p className="card-title">Next up</p>
+                <p className="card-sub" style={{ marginBottom: 8 }}>Your next recommended action</p>
+                <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600 }}>
+                  {nextUp.order}. {nextUp.title}
+                </p>
+                {nextUp.milestone && (
+                  <p style={{ margin: "6px 0 0", fontSize: 12, color: "var(--text-dim)" }}>
+                    Milestone: {nextUp.milestone}
+                  </p>
+                )}
+              </div>
+            )}
+
+            {progress.skill_gaps && progress.skill_gaps.length > 0 && (
+              <div className="card">
+                <p className="card-title">Skill gaps</p>
+                <p className="card-sub" style={{ marginBottom: 10 }}>Not covered yet</p>
+                <div>
+                  {progress.skill_gaps.map((g) => (
+                    <span className="tag tag-gap" key={g}>{g}</span>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {skills.skills.length > 0 && (
               <div className="card">
                 <p className="card-title">Skill development</p>
@@ -424,4 +425,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-          }
+                    }
