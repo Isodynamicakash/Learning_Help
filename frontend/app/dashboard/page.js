@@ -98,6 +98,9 @@ export default function Dashboard() {
   const pct = progress.total ? Math.round((progress.completed / progress.total) * 100) : 0;
   const initial = (name || email || "?").charAt(0).toUpperCase();
 
+  // First not-yet-completed step in the current path — the "next action".
+  const nextUp = progress.items.find((i) => i.status !== "completed") || null;
+
   const grouped = {};
   for (const item of progress.items) {
     const t = item.item_type || "course";
@@ -179,7 +182,7 @@ export default function Dashboard() {
                 <div style={{ display: "flex", gap: 16, marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border)" }}>
                   <div>
                     <p style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>{skills.completed_count}</p>
-                    <p style={{ margin: 0, fontSize: 11, color: "var(--text-dim)" }}>Completed</p>
+                    <p style={{ margin: 0, fontSize: 11, color: "var(--text-dim)" }}>Completed all-time</p>
                   </div>
                   <div>
                     <p style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>{progress.total}</p>
@@ -202,8 +205,23 @@ export default function Dashboard() {
               <div className="progress-bar" style={{ marginTop: 10 }}>
                 <div className="progress-fill" style={{ width: `${pct}%` }} />
               </div>
-              <p style={{ fontSize: 11.5, color: "var(--text-dim)", marginTop: 6, marginBottom: 0 }}>{pct}% complete</p>
+              <p style={{ fontSize: 11.5, color: "var(--text-dim)", marginTop: 6, marginBottom: 0 }}>{pct}% of current path</p>
             </div>
+
+            {nextUp && (
+              <div className="card">
+                <p className="card-title">Next up</p>
+                <p className="card-sub" style={{ marginBottom: 8 }}>Your next recommended action</p>
+                <p style={{ margin: 0, fontSize: 13.5, fontWeight: 600 }}>
+                  {nextUp.order}. {nextUp.title}
+                </p>
+                {nextUp.milestone && (
+                  <p style={{ margin: "6px 0 0", fontSize: 12, color: "var(--text-dim)" }}>
+                    Milestone: {nextUp.milestone}
+                  </p>
+                )}
+              </div>
+            )}
 
             {progress.skill_gaps && progress.skill_gaps.length > 0 && (
               <div className="card">
@@ -274,4 +292,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-    }
+            }
