@@ -1,13 +1,17 @@
 import "./globals.css";
+import AssistantWidget from "../components/AssistantWidget";
 
 export const metadata = {
-  title: "Learning Path Recommender",
+  title: "Pathwise — Learning Path Recommender",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <AssistantWidget />
+      </body>
     </html>
   );
 }
