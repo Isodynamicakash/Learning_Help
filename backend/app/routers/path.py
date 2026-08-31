@@ -59,7 +59,16 @@ including prerequisites where known):
 
 Build an ordered learning path of 6-10 steps toward the learner's goal —
 prefer the higher end of that range unless the candidate list genuinely
-doesn't support it. The path must span the FULL breadth of what the goal
+doesn't support it.
+
+HARD RULE on difficulty: the path must START at the learner's stated
+skill_level and climb from there. If they are a Beginner, step 1 must be a
+Beginner-level item — never open with an "Advanced" or "Masterclass" item
+and never place an Advanced item before its Beginner/Intermediate
+counterpart on the same topic. Every item you place must be one the learner
+can actually start given what precedes it.
+
+The path must span the FULL breadth of what the goal
 requires: don't stop after covering one or two foundational topics — go
 from fundamentals through to the advanced/production-level skills implied
 by the goal (e.g. for "backend engineer": language basics, one backend
