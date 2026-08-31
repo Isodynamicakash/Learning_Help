@@ -67,9 +67,8 @@ export default function Chat() {
     <>
       <Navbar email={email} name={name} />
       <div className="chat-wrap">
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
+        <div className="dash-header">
           <h1 className="page-title" style={{ margin: 0 }}>Chat</h1>
-          <button className="btn-secondary btn-sm" onClick={() => loadProfile(userId)}>↻ Refresh</button>
         </div>
 
         <div className="chat-grid">
