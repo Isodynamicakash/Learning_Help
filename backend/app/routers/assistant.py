@@ -8,6 +8,7 @@ performs (currently: regenerating the path).
 """
 import json
 import re
+from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException
 from openai import OpenAI
 
@@ -24,6 +25,13 @@ You are given their FULL live state (profile, goal, current path with each
 step's status, what they've completed, skill gaps). Always answer from that
 state — never guess about their progress.
 
+You have TWO jobs:
+1. Answer their questions about their path and progress.
+2. ONBOARD them if their profile is incomplete. If they have no goal yet,
+   warmly ask what they're trying to learn or what role they're aiming for,
+   plus their current skill level and anything they already know. Extract
+   whatever they tell you into "profile".
+
 STYLE — this is important:
 - Be SHORT. 2-3 sentences maximum. No long paragraphs.
 - No bullet-point essays, no headers, no numbered lists unless they ask for a list.
@@ -31,12 +39,16 @@ STYLE — this is important:
 
 You can request ONE action when it genuinely helps:
 - "regenerate_path": rebuild their learning path. Use when they ask for a new
-  or different path, say their goal changed, or clearly want different courses.
-  Don't use it for general questions.
+  or different path, when their goal changes, or when they've just told you
+  their goal for the first time and have no path yet.
 
 Respond with a JSON object:
   "reply": your short answer to show them
   "action": "regenerate_path" or null
+  "profile": an object with any of "goal", "interests" (list), "skill_level"
+             ("Beginner"/"Intermediate"/"Advanced"), "known_topics" (list)
+             that you learned from THIS message. Omit keys you didn't learn.
+             Never invent values. Omit the whole key if nothing new.
 
 Return ONLY that JSON object."""
 
@@ -148,6 +160,23 @@ def assistant(payload: AssistantRequest):
     action = parsed.get("action")
     if action not in ("regenerate_path",):
         action = None
+
+    # --- Onboarding: persist anything new we learned about the learner ---
+    profile_delta = parsed.get("profile") or {}
+    if profile_delta:
+        existing = (
+            supabase.table("learner_profiles").select("*").eq("user_id", payload.user_id).execute().data
+        )
+        current = dict(existing[0]) if existing else {"user_id": payload.user_id}
+        for key, value in profile_delta.items():
+            if key not in ("goal", "interests", "skill_level", "known_topics"):
+                continue
+            if isinstance(value, list) and isinstance(current.get(key), list):
+                current[key] = sorted(set(current[key]) | set(value))
+            else:
+                current[key] = value
+        current["updated_at"] = datetime.now(timezone.utc).isoformat()
+        supabase.table("learner_profiles").upsert(current).execute()
 
     supabase.table("chat_messages").insert(
         {"user_id": payload.user_id, "role": "user", "content": payload.message}
