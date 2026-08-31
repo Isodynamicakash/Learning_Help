@@ -48,62 +48,94 @@ export default function Chat() {
         setProfileChanged(true);
       }
     } catch (e) {
-      setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — is the backend running on :8000?" }]);
+      setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — is the backend running?" }]);
     }
     setSending(false);
   }
 
+  const initial = (name || email || "?").charAt(0).toUpperCase();
+
   return (
     <>
       <Navbar email={email} name={name} />
-      <div className="container">
+      <div className="chat-wrap">
         <h1 className="page-title">Chat</h1>
 
-        {profile && (profile.goal || profile.skill_level || (profile.interests || []).length > 0) && (
-          <div className="card">
-            <p className="card-sub" style={{ marginBottom: 8 }}>Profile so far</p>
-            {profile.goal && <span className="tag">Goal: {profile.goal}</span>}
-            {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
-            {(profile.interests || []).map((i) => (
-              <span className="tag" key={i}>{i}</span>
-            ))}
-          </div>
-        )}
-
-        {profileChanged && (
-          <div className="banner">
-            <span>Your profile just updated — regenerate your path to reflect it.</span>
-            <a href="/dashboard">Go to Dashboard →</a>
-          </div>
-        )}
-
-        <div className="card">
-          <div className="chat-window">
-            {messages.map((m, i) => (
-              <div key={i} className={`msg-row ${m.role === "user" ? "user" : ""}`}>
-                <div className={`bubble ${m.role === "user" ? "bubble-user" : "bubble-assistant"}`}>
-                  {m.content}
+        <div className="chat-grid">
+          {/* ---------- Sidebar ---------- */}
+          <div className="sidebar-col">
+            <div className="card">
+              <div className="profile-card">
+                <div className="profile-avatar">{initial}</div>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <p className="card-title" style={{ marginBottom: 2 }}>{name || email}</p>
+                  {name && <p className="card-sub" style={{ marginBottom: 0 }}>{email}</p>}
                 </div>
               </div>
-            ))}
-            <div ref={endRef} />
+              {profile && (profile.goal || profile.skill_level || (profile.interests || []).length > 0) ? (
+                <>
+                  {profile.goal && <p style={{ margin: "10px 0 0", fontSize: 13.5 }}><strong>Goal:</strong> {profile.goal}</p>}
+                  <div style={{ marginTop: 8 }}>
+                    {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
+                    {(profile.interests || []).map((i) => <span className="tag" key={i}>{i}</span>)}
+                    {(profile.known_topics || []).map((k) => <span className="tag" key={k}>{k}</span>)}
+                  </div>
+                </>
+              ) : (
+                <p className="card-sub" style={{ marginTop: 10, marginBottom: 0 }}>
+                  No profile yet — tell the assistant your goal to get started.
+                </p>
+              )}
+            </div>
+
+            <div className="card">
+              <p className="card-title">Tips</p>
+              <ul style={{ margin: "8px 0 0", paddingLeft: 18, fontSize: 13, color: "var(--text-dim)", lineHeight: 1.7 }}>
+                <li>Mention your current skill level and anything you already know</li>
+                <li>Be specific about your goal (e.g. "backend developer" not just "programming")</li>
+                <li>After your profile updates, head to the Dashboard to generate your path</li>
+              </ul>
+            </div>
+
+            <a href="/dashboard" className="btn-primary btn-block" style={{ display: "block", textAlign: "center", textDecoration: "none" }}>
+              Go to Dashboard →
+            </a>
           </div>
 
-          <div className="chat-input-row">
-            <input
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && send()}
-              placeholder="e.g. I want to become a backend developer, I know basic Python"
-            />
-            <button className="btn-primary" onClick={send} disabled={sending}>
-              {sending ? "..." : "Send"}
-            </button>
-          </div>
-        </div>
+          {/* ---------- Main chat ---------- */}
+          <div>
+            {profileChanged && (
+              <div className="banner">
+                <span>Your profile just updated — regenerate your path to reflect it.</span>
+                <a href="/dashboard">Go to Dashboard →</a>
+              </div>
+            )}
 
-        <div style={{ textAlign: "center" }}>
-          <a href="/dashboard">Go to your dashboard →</a>
+            <div className="card">
+              <div className="chat-window">
+                {messages.map((m, i) => (
+                  <div key={i} className={`msg-row ${m.role === "user" ? "user" : ""}`}>
+                    <div className={`bubble ${m.role === "user" ? "bubble-user" : "bubble-assistant"}`}>
+                      {m.content}
+                    </div>
+                  </div>
+                ))}
+                <div ref={endRef} />
+              </div>
+
+              <div className="chat-input-row">
+                <input
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === "Enter" && send()}
+                  placeholder="e.g. I want to become a backend developer, I know basic Python"
+                />
+                <button className="btn-primary" onClick={send} disabled={sending}>
+                  {sending ? "..." : "Send"}
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
