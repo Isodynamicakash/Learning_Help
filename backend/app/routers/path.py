@@ -242,9 +242,15 @@ def adapt_path(payload: PathAdaptRequest):
     client = OpenAI(api_key=OPENAI_API_KEY)
     extra = (
         f"The learner has ALREADY COMPLETED: {', '.join(known) or 'nothing yet'}. "
-        f"They just gave this feedback: '{payload.feedback}' on '{payload.course_id}'. "
-        "If feedback is 'struggled', insert an easier/foundational item before continuing. "
-        "If 'too_easy', skip ahead to a harder item. If 'not_relevant', drop items like it."
+        f"They just gave this feedback: '{payload.feedback}' on '{payload.course_id}'.\n"
+        "Apply the feedback by RE-ORDERING, not just by swapping items:\n"
+        "- 'struggled': keep that item in the path, but move it LATER, and place "
+        "one or two easier/foundational prerequisite items BEFORE it so they can "
+        "build up to it. The easier items must come first in the returned order.\n"
+        "- 'too_easy': drop that item (or move it much later) and bring more "
+        "advanced items EARLIER so they skip ahead.\n"
+        "- 'not_relevant': remove it and anything similar.\n"
+        "Return the remaining steps in the exact order the learner should do them."
     )
     result = _call_llm_for_steps(client, profile, candidates, extra_instruction=extra, temperature=0.3)
     steps_raw = result.get("steps", [])
