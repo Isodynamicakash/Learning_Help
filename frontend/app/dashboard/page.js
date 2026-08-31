@@ -12,6 +12,7 @@ export default function Dashboard() {
   const router = useRouter();
   const [userId, setUserId] = useState(null);
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [pathId, setPathId] = useState(null);
   const [profile, setProfile] = useState(null);
   const [progress, setProgress] = useState({ items: [], total: 0, completed: 0, skill_gaps: [] });
@@ -26,6 +27,7 @@ export default function Dashboard() {
       else {
         setUserId(data.session.user.id);
         setEmail(data.session.user.email);
+        setName(data.session.user.user_metadata?.full_name || "");
         refreshAll(data.session.user.id);
       }
     });
@@ -82,11 +84,11 @@ export default function Dashboard() {
   }
 
   const pct = progress.total ? Math.round((progress.completed / progress.total) * 100) : 0;
-  const initial = (email || "?").charAt(0).toUpperCase();
+  const initial = (name || email || "?").charAt(0).toUpperCase();
 
   return (
     <>
-      <Navbar email={email} />
+      <Navbar email={email} name={name} />
       <div className="container">
         <h1 className="page-title">Dashboard</h1>
 
@@ -94,7 +96,8 @@ export default function Dashboard() {
           <div className="card profile-card">
             <div className="profile-avatar">{initial}</div>
             <div style={{ flex: 1 }}>
-              <p className="card-title" style={{ marginBottom: 2 }}>{email}</p>
+              <p className="card-title" style={{ marginBottom: 2 }}>{name || email}</p>
+              {name && <p className="card-sub" style={{ marginBottom: 6 }}>{email}</p>}
               {profile.goal && <p style={{ margin: "4px 0", fontSize: 14 }}><strong>Goal:</strong> {profile.goal}</p>}
               <div style={{ marginTop: 8 }}>
                 {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
@@ -200,4 +203,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-            }
+                }
