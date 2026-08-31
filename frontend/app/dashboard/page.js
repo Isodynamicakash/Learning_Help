@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [explanations, setExplanations] = useState({});
   const [loading, setLoading] = useState(false);
   const [adapting, setAdapting] = useState(null);
+  const [refreshing, setRefreshing] = useState(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -35,6 +36,7 @@ export default function Dashboard() {
   }, [router]);
 
   async function refreshAll(uid) {
+    setRefreshing(true);
     try {
       const p = await api.getProgress(uid);
       setProgress(p);
@@ -48,6 +50,7 @@ export default function Dashboard() {
       const prof = await api.getChatProfile(uid);
       setProfile(prof && Object.keys(prof).length ? prof : null);
     } catch (e) {}
+    setRefreshing(false);
   }
 
   async function generate() {
@@ -148,7 +151,12 @@ export default function Dashboard() {
     <>
       <Navbar email={email} name={name} />
       <div className="dash-wrap">
-        <h1 className="page-title">Dashboard</h1>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
+          <h1 className="page-title" style={{ margin: 0 }}>Dashboard</h1>
+          <button className="btn-secondary btn-sm" onClick={() => refreshAll(userId)} disabled={refreshing}>
+            {refreshing ? "Refreshing..." : "↻ Refresh"}
+          </button>
+        </div>
 
         <div className="dash-grid">
           {/* ---------- Sidebar ---------- */}
@@ -168,6 +176,21 @@ export default function Dashboard() {
                   {(profile.interests || []).map((i) => <span className="tag" key={i}>{i}</span>)}
                   {(profile.known_topics || []).map((k) => <span className="tag" key={k}>{k}</span>)}
                 </div>
+                <div style={{ display: "flex", gap: 16, marginTop: 14, paddingTop: 12, borderTop: "1px solid var(--border)" }}>
+                  <div>
+                    <p style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>{skills.completed_count}</p>
+                    <p style={{ margin: 0, fontSize: 11, color: "var(--text-dim)" }}>Completed</p>
+                  </div>
+                  <div>
+                    <p style={{ margin: 0, fontSize: 17, fontWeight: 700 }}>{progress.total}</p>
+                    <p style={{ margin: 0, fontSize: 11, color: "var(--text-dim)" }}>In current path</p>
+                  </div>
+                </div>
+                {profile.updated_at && (
+                  <p style={{ margin: "10px 0 0", fontSize: 10.5, color: "var(--text-dim)" }}>
+                    Profile updated {new Date(profile.updated_at).toLocaleString()}
+                  </p>
+                )}
               </div>
             )}
 
@@ -251,4 +274,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-                  }
+    }
