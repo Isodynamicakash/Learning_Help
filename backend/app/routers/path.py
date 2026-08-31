@@ -1,4 +1,5 @@
 import json
+import re
 import uuid
 from fastapi import APIRouter, HTTPException
 from openai import OpenAI
@@ -16,8 +17,11 @@ router = APIRouter(prefix="/path", tags=["path"])
 
 def _build_candidates(goal_text: str, known: list[str]) -> dict:
     """Course candidates from the recommender, plus their companion
-    project/resource entries — so the path isn't 100% courses."""
-    candidate_titles = top_related_courses(goal_text, top_k=10)
+    project/resource entries — so the path isn't 100% courses.
+    top_k raised to 18 (from 10) so the LLM has enough breadth to build a
+    path that actually spans the goal's full domain (fundamentals through
+    advanced) instead of stopping after 4-5 shallow steps."""
+    candidate_titles = top_related_courses(goal_text, top_k=18)
     candidates = {}
     for t in candidate_titles:
         if t in known:
@@ -35,8 +39,14 @@ Candidate items (courses, projects, and resources — with metadata,
 including prerequisites where known):
 {json.dumps(candidates, indent=2)}
 
-Build an ordered learning path (3-6 steps) toward the learner's goal,
-respecting prerequisites and skill level. Prefer including at least one
+Build an ordered learning path of 6-10 steps toward the learner's goal —
+prefer the higher end of that range unless the candidate list genuinely
+doesn't support it. The path must span the FULL breadth of what the goal
+requires: don't stop after covering one or two foundational topics — go
+from fundamentals through to the advanced/production-level skills implied
+by the goal (e.g. for "backend engineer": language basics, one backend
+framework, APIs, databases, testing, deployment/infra — not just the first
+2-3 of those). Respect prerequisites and skill level. Include at least one
 "project" item (hands-on practice) once its prerequisite course is placed,
 and a "resource" item where it reinforces a course. {extra_instruction}
 
@@ -54,10 +64,21 @@ Return ONLY a JSON object: {{"skill_gaps": [...], "steps": [...]}}, no markdown 
         model=OPENAI_MODEL,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
+        response_format={"type": "json_object"},
     )
     raw = resp.choices[0].message.content.strip()
-    raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-    return json.loads(raw)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        match = re.search(r"\{.*\}", raw, re.DOTALL)
+        if match:
+            try:
+                return json.loads(match.group(0))
+            except json.JSONDecodeError:
+                pass
+        raise HTTPException(
+            502, f"The AI returned a response that couldn't be parsed. Raw start: {raw[:200]!r}"
+        )
 
 
 @router.post("/generate", response_model=PathGenerateResponse)
