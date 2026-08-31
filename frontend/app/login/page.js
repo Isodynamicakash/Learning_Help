@@ -31,7 +31,7 @@ export default function Login() {
         return;
       }
       if (data.session) {
-        router.replace("/chat");
+        router.replace("/dashboard");
       } else {
         setNotice("Account created. Check your email once to confirm, then sign in below.");
         setMode("signin");
@@ -46,7 +46,7 @@ export default function Login() {
       setError(error.message);
       return;
     }
-    router.replace("/chat");
+    router.replace("/dashboard");
   }
 
   return (
@@ -131,4 +131,4 @@ export default function Login() {
       </div>
     </div>
   );
-                }
+}
