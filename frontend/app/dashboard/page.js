@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { supabase } from "../../lib/supabaseClient";
 import { api } from "../../lib/api";
 import Navbar from "../../components/Navbar";
+import AssistantWidget from "../../components/AssistantWidget";
 
 const TYPE_ORDER = ["course", "project", "resource"];
 const TYPE_SECTION_LABEL = { course: "Courses", project: "Projects", resource: "Resources" };
@@ -53,6 +54,8 @@ export default function Dashboard() {
   const [refreshing, setRefreshing] = useState(false);
   const [busy, setBusy] = useState(null); // { title, sub }
   const [celebration, setCelebration] = useState(null); // { title, sub }
+  const [assistantSignal, setAssistantSignal] = useState(0);
+  const [assistantSeed, setAssistantSeed] = useState(null);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -182,6 +185,15 @@ export default function Dashboard() {
         )}
         <div className="step-actions">
           <button className="btn-secondary btn-sm" onClick={() => explainStep(s.course_id)}>Why this?</button>
+          <button
+            className="btn-secondary btn-sm"
+            onClick={() => {
+              setAssistantSeed({ courseId: s.course_id, title: s.title });
+              setAssistantSignal((n) => n + 1);
+            }}
+          >
+            Ask more
+          </button>
           {s.status !== "completed" && (
             <>
               <button className="btn-secondary btn-sm" onClick={() => markDone(s.course_id, s.title)}>Mark complete</button>
@@ -231,10 +243,15 @@ export default function Dashboard() {
 
       <Navbar email={email} name={name} />
       <div className="dash-wrap">
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
-          <h1 className="page-title" style={{ margin: 0 }}>Dashboard</h1>
-          <button className="btn-secondary btn-sm" onClick={() => refreshAll(userId)} disabled={refreshing}>
-            {refreshing ? "Refreshing..." : "↻ Refresh"}
+        <div className="dash-header">
+          <div>
+            <h1 className="page-title" style={{ margin: 0 }}>Dashboard</h1>
+            <p style={{ margin: "4px 0 0", fontSize: 13, color: "var(--text-dim)" }}>
+              {progress.items.length ? "Your current learning path" : "No path generated yet"}
+            </p>
+          </div>
+          <button className="btn-primary" onClick={generate} disabled={loading}>
+            {loading ? "Generating..." : progress.items.length ? "Regenerate path" : "Generate my learning path"}
           </button>
         </div>
 
@@ -308,15 +325,6 @@ export default function Dashboard() {
 
           {/* ---------- Main content ---------- */}
           <div>
-            <div className="main-col-header">
-              <p style={{ margin: 0, fontSize: 13.5, color: "var(--text-dim)" }}>
-                {progress.items.length ? "Your current learning path" : "No path generated yet"}
-              </p>
-              <button className="btn-primary" onClick={generate} disabled={loading}>
-                {loading ? "Generating..." : progress.items.length ? "Regenerate path" : "Generate my learning path"}
-              </button>
-            </div>
-
             {progress.items.length === 0 && (
               <div className="card empty-state">
                 <div className="big-emoji">
@@ -423,6 +431,13 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+
+      <AssistantWidget
+        userId={userId}
+        openSignal={assistantSignal}
+        seedContext={assistantSeed}
+        onPathChanged={() => refreshAll(userId)}
+      />
     </>
   );
-                    }
+    }
