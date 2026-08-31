@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routers import chat, recommend, path, explain, progress
+from app.routers import chat, recommend, path, explain, progress, assistant
 
 app = FastAPI(title="Personalized Learning Path Recommender")
 
@@ -17,6 +17,7 @@ app.include_router(recommend.router)
 app.include_router(path.router)
 app.include_router(explain.router)
 app.include_router(progress.router)
+app.include_router(assistant.router)
 
 
 @app.get("/health")
