@@ -11,6 +11,10 @@ export default function Navbar({ email, name }) {
     router.replace("/login");
   }
 
+  function openAssistant() {
+    window.dispatchEvent(new CustomEvent("pathwise:open-assistant"));
+  }
+
   const initial = (name || email || "?").charAt(0).toUpperCase();
 
   return (
@@ -26,7 +30,7 @@ export default function Navbar({ email, name }) {
         Pathwise
       </div>
       <div className="navbar-links">
-        <a href="/chat" className={`nav-link ${pathname === "/chat" ? "active" : ""}`}>Chat</a>
+        <button className="nav-link nav-link-btn" onClick={openAssistant}>Chat</button>
         <a href="/dashboard" className={`nav-link ${pathname === "/dashboard" ? "active" : ""}`}>Dashboard</a>
         <span className="avatar" title={name || email}>{initial}</span>
         <button className="btn-danger btn-sm" onClick={logout}>Log out</button>
