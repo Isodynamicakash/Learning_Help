@@ -15,16 +15,30 @@ from app.supabase_client import get_supabase
 router = APIRouter(prefix="/path", tags=["path"])
 
 
+def _seen_titles(supabase, user_id: str):
+    """All items ever shown to this learner, split into completed vs
+    not-completed. Used so regenerating actually explores new ground
+    instead of reproducing the same deterministic classifier output."""
+    rows = (
+        supabase.table("path_items").select("title, status").eq("user_id", user_id).execute().data
+    )
+    completed = [r["title"] for r in rows if r["status"] == "completed"]
+    shown_not_completed = [r["title"] for r in rows if r["status"] != "completed"]
+    return completed, shown_not_completed
+
+
 def _build_candidates(goal_text: str, known: list[str]) -> dict:
     """Course candidates from the recommender, plus their companion
-    project/resource entries — so the path isn't 100% courses.
-    top_k raised to 18 (from 10) so the LLM has enough breadth to build a
-    path that actually spans the goal's full domain (fundamentals through
-    advanced) instead of stopping after 4-5 shallow steps."""
-    candidate_titles = top_related_courses(goal_text, top_k=18)
+    project/resource entries. top_k=40 (roughly half the catalog) gives the
+    model real breadth to work with for a comprehensive path. Only excludes
+    items the learner has actually completed (known_topics + completed
+    history) — items merely shown before but not finished remain eligible,
+    since "not completed yet" isn't a reason to hide something."""
+    known_set = set(known)
+    candidate_titles = top_related_courses(goal_text, top_k=40)
     candidates = {}
     for t in candidate_titles:
-        if t in known:
+        if t in known_set:
             continue
         candidates[t] = get_course(t)
         for extra in projects_and_resources_for(t):
@@ -32,8 +46,12 @@ def _build_candidates(goal_text: str, known: list[str]) -> dict:
     return candidates
 
 
-def _call_llm_for_steps(client, profile, candidates, extra_instruction=""):
+def _call_llm_for_steps(client, profile, candidates, extra_instruction="", temperature=0.3):
     prompt = f"""Learner profile: {json.dumps(profile)}
+
+Note: "known_topics" and "already_completed" (if present) both represent
+things the learner has already finished — never suggest these again, and
+treat them as the foundation the path should build forward from.
 
 Candidate items (courses, projects, and resources — with metadata,
 including prerequisites where known):
@@ -63,7 +81,7 @@ Return ONLY a JSON object: {{"skill_gaps": [...], "steps": [...]}}, no markdown 
     resp = client.chat.completions.create(
         model=OPENAI_MODEL,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.3,
+        temperature=temperature,
         response_format={"type": "json_object"},
     )
     raw = resp.choices[0].message.content.strip()
@@ -94,12 +112,39 @@ def generate_path(payload: PathGenerateRequest):
         raise HTTPException(400, "No learner profile yet — talk to /chat first.")
     profile = profile_rows[0]
 
+    completed_history, shown_not_completed = _seen_titles(supabase, payload.user_id)
     goal_text = profile.get("goal", "") or " ".join(profile.get("interests", []))
-    known = profile.get("known_topics", [])
+    known = list(set(profile.get("known_topics", []) + completed_history))
     candidates = _build_candidates(goal_text, known)
 
+    # Feed the FULL known list back into what the AI actually sees — without
+    # this, the model only sees whatever was in chat-derived known_topics,
+    # never what the learner has actually completed inside the app.
+    profile = dict(profile)
+    profile["known_topics"] = known
+    if completed_history:
+        profile["already_completed"] = completed_history
+
+    is_regenerate = bool(shown_not_completed)
+    extra = (
+        "This is a REGENERATE — the learner already saw a previous path. "
+        "Feel free to keep good items from before, but reconsider the "
+        "ordering, reasoning, and mix rather than just repeating the exact "
+        "same list mechanically. "
+        if is_regenerate else ""
+    )
+    if completed_history:
+        extra += (
+            f"The learner has ALREADY COMPLETED: {', '.join(completed_history)}. "
+            "Build on that — don't re-suggest these, and treat them as a "
+            "foundation the next steps should follow from."
+        )
+
     client = OpenAI(api_key=OPENAI_API_KEY)
-    result = _call_llm_for_steps(client, profile, candidates)
+    result = _call_llm_for_steps(
+        client, profile, candidates, extra_instruction=extra,
+        temperature=0.55 if is_regenerate else 0.3,
+    )
     steps_raw = result.get("steps", [])
     skill_gaps = result.get("skill_gaps", [])
 
@@ -154,7 +199,6 @@ def adapt_path(payload: PathAdaptRequest):
     profile = dict(profile_rows[0])
     profile["latest_feedback"] = f"On '{payload.course_id}': {payload.feedback}"
 
-    # mark feedback on the step itself
     supabase.table("path_items").update({"feedback": payload.feedback}).eq(
         "path_id", payload.path_id
     ).eq("course_id", payload.course_id).execute()
@@ -162,27 +206,44 @@ def adapt_path(payload: PathAdaptRequest):
     existing_items = (
         supabase.table("path_items").select("*").eq("path_id", payload.path_id).order("order").execute().data
     )
+    if not existing_items:
+        raise HTTPException(404, "That path no longer exists — generate a new one.")
+
     completed_titles = [r["title"] for r in existing_items if r["status"] == "completed"]
     remaining = [r for r in existing_items if r["status"] != "completed"]
     if not remaining:
         raise HTTPException(400, "No remaining steps to adapt — path is already complete.")
 
-    known = list(set(profile.get("known_topics", []) + completed_titles))
+    # Also pull completed history from any OTHER past paths — the AI should
+    # know everything the learner has ever finished, not just this path's.
+    all_completed_history, _ = _seen_titles(supabase, payload.user_id)
+    known = list(set(profile.get("known_topics", []) + completed_titles + all_completed_history))
     goal_text = profile.get("goal", "") or " ".join(profile.get("interests", []))
     candidates = _build_candidates(goal_text, known)
 
+    if not candidates:
+        raise HTTPException(
+            502, "Couldn't find any candidate courses for this goal — try rephrasing your goal in chat."
+        )
+
+    # Feed the full known/completed picture back into what the AI sees.
+    profile["known_topics"] = known
+    profile["already_completed"] = list(set(completed_titles + all_completed_history))
+
     client = OpenAI(api_key=OPENAI_API_KEY)
     extra = (
-        "The learner already completed some steps (reflected in known_topics). "
+        f"The learner has ALREADY COMPLETED: {', '.join(known) or 'nothing yet'}. "
         f"They just gave this feedback: '{payload.feedback}' on '{payload.course_id}'. "
         "If feedback is 'struggled', insert an easier/foundational item before continuing. "
         "If 'too_easy', skip ahead to a harder item. If 'not_relevant', drop items like it."
     )
-    result = _call_llm_for_steps(client, profile, candidates, extra_instruction=extra)
+    result = _call_llm_for_steps(client, profile, candidates, extra_instruction=extra, temperature=0.3)
     steps_raw = result.get("steps", [])
     skill_gaps = result.get("skill_gaps", [])
 
-    # delete old not-completed items, insert the re-planned remainder after the completed ones
+    if not steps_raw:
+        raise HTTPException(502, "The AI didn't return any steps — try again.")
+
     supabase.table("path_items").delete().eq("path_id", payload.path_id).neq("status", "completed").execute()
 
     start_order = len(completed_titles) + 1
