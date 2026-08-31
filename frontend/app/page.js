@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      router.replace(data.session ? "/chat" : "/login");
+      router.replace(data.session ? "/dashboard" : "/login");
     });
   }, [router]);
 
