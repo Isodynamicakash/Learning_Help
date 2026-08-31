@@ -55,7 +55,7 @@ export default function Dashboard() {
       await api.generatePath(userId);
       await refreshAll(userId);
     } catch (e) {
-      alert("Couldn't generate a path yet — chat with the assistant about your goal first.");
+      alert(`Couldn't generate a path: ${e.message}`);
     }
     setLoading(false);
   }
@@ -203,4 +203,4 @@ export default function Dashboard() {
       </div>
     </>
   );
-                }
+              }
