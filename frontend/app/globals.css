@@ -499,24 +499,50 @@ a:hover { text-decoration: underline; }
 /* ---------- Floating assistant ---------- */
 .assistant-fab {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
   z-index: 130;
-  width: 52px; height: 52px;
+  width: 68px; height: 68px;
   border-radius: 50%;
   background: var(--accent);
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 8px 26px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 32px rgba(91,127,219,0.45), 0 4px 14px rgba(0,0,0,0.4);
   padding: 0;
-  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: grab;
+  touch-action: none;
+  transition: background 0.15s ease, box-shadow 0.2s ease;
+  animation: fab-pulse 3.2s ease-in-out infinite;
 }
-.assistant-fab:hover { transform: translateY(-2px); background: var(--accent-hover); }
+.assistant-fab:hover { background: var(--accent-hover); }
+.assistant-fab:active { cursor: grabbing; animation: none; }
+.assistant-fab.is-open { animation: none; }
+@keyframes fab-pulse {
+  0%, 100% { box-shadow: 0 10px 32px rgba(91,127,219,0.45), 0 4px 14px rgba(0,0,0,0.4); }
+  50%      { box-shadow: 0 10px 40px rgba(91,127,219,0.75), 0 4px 14px rgba(0,0,0,0.4); }
+}
+
+.fab-badge {
+  position: absolute;
+  top: 2px; right: 2px;
+  min-width: 20px; height: 20px;
+  border-radius: 999px;
+  background: var(--danger);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0 5px;
+  border: 2px solid var(--bg);
+}
+
+.nav-link-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
 
 .assistant-panel {
   position: fixed;
-  right: 24px;
-  bottom: 88px;
-  z-index: 130;
+  z-index: 129;
   width: 370px;
   max-width: calc(100vw - 48px);
   max-height: min(620px, calc(100vh - 140px));
@@ -602,4 +628,4 @@ a:hover { text-decoration: underline; }
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 20px;
-}
+  }
