@@ -32,6 +32,8 @@ async function get(path) {
 
 export const api = {
   chat: (user_id, message) => post("/chat", { user_id, message }),
+  assistant: (user_id, message, context_course_id = null) =>
+    post("/assistant", { user_id, message, context_course_id }),
   getChatProfile: (user_id) => get(`/chat/profile/${user_id}`),
   recommend: (user_id, query, top_k = 5) => post("/recommend", { user_id, query, top_k }),
   generatePath: (user_id) => post("/path/generate", { user_id }),
