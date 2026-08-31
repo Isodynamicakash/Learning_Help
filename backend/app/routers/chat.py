@@ -1,4 +1,5 @@
 import json
+import re
 from fastapi import APIRouter, HTTPException
 from openai import OpenAI
 from app.config import OPENAI_API_KEY, OPENAI_MODEL
@@ -11,14 +12,33 @@ SYSTEM_PROMPT = """You are a learning path assistant. Talk to the learner
 naturally and figure out: their goal, interests, current skill level
 (Beginner/Intermediate/Advanced), and any courses/skills they already know.
 
-Always reply with a JSON object with exactly these keys:
-  "reply": a short, friendly natural-language message to show the learner
+You must respond with a JSON object with exactly these keys:
+  "reply": a short, friendly natural-language message to show the learner —
+           this is the ONLY text the learner will see, so it must read as a
+           complete, natural chat message on its own. Never mention JSON,
+           profiles, or say things like "here's your updated profile" —
+           just talk to them normally.
   "profile": an object with any of "goal", "interests" (list), "skill_level",
              "known_topics" (list) that you were able to extract so far —
              omit keys you don't know yet, never invent values.
-
-Return ONLY that JSON object, no markdown fences.
 """
+
+
+def _extract_json_object(raw: str) -> dict:
+    """The model is asked for strict JSON via response_format, but as a
+    safety net (older models, edge cases) this pulls the {...} block out of
+    surrounding prose if the model still wraps it in chatter."""
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        pass
+    match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if match:
+        try:
+            return json.loads(match.group(0))
+        except json.JSONDecodeError:
+            pass
+    return {}
 
 
 @router.get("/profile/{user_id}")
@@ -56,17 +76,19 @@ def chat(payload: ChatMessageIn):
         model=OPENAI_MODEL,
         messages=messages,
         temperature=0.4,
+        response_format={"type": "json_object"},
     )
     raw = resp.choices[0].message.content.strip()
-    raw = raw.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+    parsed = _extract_json_object(raw)
 
-    try:
-        parsed = json.loads(raw)
-    except json.JSONDecodeError:
-        parsed = {"reply": raw, "profile": {}}
-
-    reply = parsed.get("reply", "")
+    reply = parsed.get("reply", "").strip()
     profile_delta = parsed.get("profile", {})
+
+    # Never show the learner raw JSON/unparsed model output — if parsing
+    # genuinely failed and there's no usable reply, fall back to a clean
+    # generic message instead of leaking internals.
+    if not reply:
+        reply = "Got it — tell me a bit more about what you're aiming for?"
 
     # persist chat turn
     supabase.table("chat_messages").insert(
