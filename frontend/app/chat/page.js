@@ -26,9 +26,17 @@ export default function Chat() {
         setUserId(data.session.user.id);
         setEmail(data.session.user.email);
         setName(data.session.user.user_metadata?.full_name || "");
+        loadProfile(data.session.user.id);
       }
     });
   }, [router]);
+
+  async function loadProfile(uid) {
+    try {
+      const prof = await api.getChatProfile(uid);
+      if (prof && Object.keys(prof).length) setProfile(prof);
+    } catch (e) {}
+  }
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -59,7 +67,10 @@ export default function Chat() {
     <>
       <Navbar email={email} name={name} />
       <div className="chat-wrap">
-        <h1 className="page-title">Chat</h1>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 18 }}>
+          <h1 className="page-title" style={{ margin: 0 }}>Chat</h1>
+          <button className="btn-secondary btn-sm" onClick={() => loadProfile(userId)}>↻ Refresh</button>
+        </div>
 
         <div className="chat-grid">
           {/* ---------- Sidebar ---------- */}
