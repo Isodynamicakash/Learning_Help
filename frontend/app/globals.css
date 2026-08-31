@@ -628,4 +628,41 @@ a:hover { text-decoration: underline; }
   gap: 16px;
   flex-wrap: wrap;
   margin-bottom: 20px;
-  }
+}
+
+/* ---------- Completed steps: faded back so the live path stands out ---------- */
+.step-card.is-done {
+  opacity: 0.45;
+  filter: grayscale(0.7);
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+.step-card.is-done:hover { opacity: 1; filter: none; }
+
+.type-chip {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+}
+
+/* ---------- Order / type view toggle ---------- */
+.view-toggle {
+  display: inline-flex;
+  gap: 3px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 3px;
+  margin-bottom: 16px;
+}
+.view-toggle button {
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 12.5px;
+  padding: 5px 13px;
+  border-radius: 6px;
+}
+.view-toggle button.active { background: var(--accent); color: white; }
+.view-toggle button:hover:not(.active) { color: var(--text); }
