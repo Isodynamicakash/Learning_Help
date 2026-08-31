@@ -1,0 +1,29 @@
+# ---- Secrets — never commit these ----
+backend/.env
+frontend/.env.local
+
+# ---- Python ----
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.pyo
+
+# ---- Node / Next.js ----
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/npm-debug.log*
+
+# ---- Trained model artifacts ----
+# NOT ignored — vectorizer.pkl / classifier.pkl / train.csv are loaded at
+# RUNTIME by app/engine/recommender.py on every request, not just for
+# training. They must ship with the deployed backend. train.csv is ~59MB —
+# under GitHub's 100MB hard limit, but you'll see a "large file" warning on
+# push; that's expected and safe to ignore.
+
+# ---- OS / editor junk ----
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
