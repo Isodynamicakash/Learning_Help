@@ -15,6 +15,7 @@ export default function Chat() {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [profile, setProfile] = useState(null);
+  const [profileChanged, setProfileChanged] = useState(false);
   const endRef = useRef(null);
 
   useEffect(() => {
@@ -40,7 +41,10 @@ export default function Chat() {
     try {
       const res = await api.chat(userId, userMsg);
       setMessages((m) => [...m, { role: "assistant", content: res.reply }]);
-      if (res.profile_updated) setProfile(res.profile);
+      if (res.profile_updated) {
+        setProfile(res.profile);
+        setProfileChanged(true);
+      }
     } catch (e) {
       setMessages((m) => [...m, { role: "assistant", content: "Something went wrong — is the backend running on :8000?" }]);
     }
@@ -56,11 +60,18 @@ export default function Chat() {
         {profile && (profile.goal || profile.skill_level || (profile.interests || []).length > 0) && (
           <div className="card">
             <p className="card-sub" style={{ marginBottom: 8 }}>Profile so far</p>
-            {profile.goal && <span className="tag">🎯 {profile.goal}</span>}
+            {profile.goal && <span className="tag">Goal: {profile.goal}</span>}
             {profile.skill_level && <span className="tag">{profile.skill_level}</span>}
             {(profile.interests || []).map((i) => (
               <span className="tag" key={i}>{i}</span>
             ))}
+          </div>
+        )}
+
+        {profileChanged && (
+          <div className="banner">
+            <span>Your profile just updated — regenerate your path to reflect it.</span>
+            <a href="/dashboard">Go to Dashboard →</a>
           </div>
         )}
 
