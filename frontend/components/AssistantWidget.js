@@ -52,8 +52,16 @@ export default function AssistantWidget() {
     try {
       const p = await api.getProgress(uid);
       let msg;
-      if (!p.total) {
-        msg = "Hey! You don't have a path yet — tell me your goal and I'll build one.";
+      let prof = null;
+      try {
+        prof = await api.getChatProfile(uid);
+      } catch (err) {}
+      const hasGoal = prof && prof.goal;
+
+      if (!hasGoal) {
+        msg = "Hi! What are you trying to learn, or what role are you aiming for? Tell me your level too and I'll build you a path.";
+      } else if (!p.total) {
+        msg = `Got your goal: ${prof.goal}. Say "build my path" and I'll put one together.`;
       } else if (p.completed === 0) {
         msg = `You've got ${p.total} steps lined up and haven't started yet. Want me to tell you where to begin?`;
       } else if (p.completed === p.total) {
@@ -249,4 +257,4 @@ export default function AssistantWidget() {
       </button>
     </>
   );
-}
+                              }
