@@ -345,3 +345,15 @@ a:hover { text-decoration: underline; }
   color: var(--text-dim);
   flex-shrink: 0;
 }
+
+/* ---------- Chat wide layout ---------- */
+.chat-wrap { max-width: 1360px; margin: 0 auto; padding: 0 28px 60px; }
+.chat-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .chat-grid { grid-template-columns: 1fr; }
+}
